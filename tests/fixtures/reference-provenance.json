@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "nbis_archive_sha256": "0adf8ab0f6b0e4208de50ca00ba21d3d77112ecd66288757ddfed21f6bee92c3",
+  "nfiq2_commit": "76b8c4e0b0541f3deab832b1a496e524edc0b5b6",
+  "reference_build": {
+    "platform": "macOS ARM64",
+    "compiler": "Apple Clang 21.0.0 (clang-2100.3.34.2)",
+    "configuration": "Release",
+    "algorithm_sources": "original imported source, no wrapper or generated-source adaptations",
+    "nfiq2_dependency_configuration": "OpenCV core/ml/imgproc, shared libraries, acceleration flags disabled, embedded optical/ink model",
+    "nfiq1_cli": "official NBIS nfiq -v -raw 512,512,8,500 <capture.gray8>",
+    "reproduction": "scripts/build-reference.py and scripts/record-reference.py"
+  },
+  "output_sha256": {
+    "nfiq1-reference.tsv": "de80bcec75d19f3af9e774369d9854ad8ba62b16c149f31e90538f1b8aa2a8c4",
+    "nfiq2-reference.tsv": "9d56d42a6c858883d47710687ef0a30a586072bf2fd1a1628ca56fb12c8dca3e",
+    "nfiq1-official-cli.json": "5313a046274ae3785b4031a41f8053188e2777754c290ad5ed7d701faa016158",
+    "nfiq2-release-vectors.json": "02f0b870971fca0420436fe10f1a4ec32f395592dc3e5391ec0de8c774c91247",
+    "nfiq2-release.tsv": "06377d7880ca03a7e7284d8a794a7fdc1c01f578926e3a820f5bb938ee531f5b",
+    "nfiq1-release-vectors.json": "992883c30281cf3bd0ff455d33bcbbc6efd85c16f167d360e71090ac6d11b1b9",
+    "nfiq1-release.tsv": "c7b197834f4994feb664bf8441af34ba98d560c99cf69c0a03120e99a15b026c",
+    "nfiq1-published.log": "b6136121e500190a4aa4c575db3b4e06b061f223e9e51d398b46d442562f0123"
+  },
+  "nbis_test_archive_sha256": "5a1e0f7cb06ecb3ab7936e39bde97802a364f1398e37054ed195bff052b9ff00",
+  "nbis_reference_build": {
+    "archive_url": "https://nigos.nist.gov/nist/nbis/nbis_v5_0_0.zip",
+    "archive_sha256": "0adf8ab0f6b0e4208de50ca00ba21d3d77112ecd66288757ddfed21f6bee92c3",
+    "source_files_verified": 2168,
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "cflags": "-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -fPIC -Wno-error=implicit-function-declaration -Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types",
+    "system": "Darwin",
+    "machine": "arm64",
+    "commands": [
+      [
+        "sh",
+        "setup.sh",
+        "<install>",
+        "--without-X11",
+        "--STDLIBS"
+      ],
+      [
+        "make",
+        "config",
+        "CC=cc",
+        "CFLAGS=-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -fPIC -Wno-error=implicit-function-declaration -Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types"
+      ],
+      [
+        "make",
+        "it",
+        "-j4",
+        "CC=cc",
+        "CFLAGS=-O2 -w -ansi -D_POSIX_SOURCE -D__NBISLE__ -fPIC -Wno-error=implicit-function-declaration -Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types"
+      ]
+    ],
+    "tools": {
+      "nfiq": {
+        "sha256": "65386de192c314febf50a28b579c9d0bebf4ba700769b69d57e71167a770e044"
+      },
+      "dwsq": {
+        "sha256": "2b16154b76e036b036f74968cf13f481623c1357ebc73961847b3bcdbaaf68dd"
+      }
+    }
+  }
+}

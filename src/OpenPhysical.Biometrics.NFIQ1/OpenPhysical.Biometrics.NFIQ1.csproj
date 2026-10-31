@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <IsPackable>true</IsPackable>
+        <QualityAlgorithm>nfiq1</QualityAlgorithm>
+        <PackageId>OpenPhysical.Biometrics.NFIQ1</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>In-memory NIST NFIQ 1 fingerprint image quality assessment for .NET.</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <EmbeddedResource
+            Include="../../runtimes.props"
+            LogicalName="OpenPhysical.Biometrics.NFIQ.runtimes.props"
+        />
+        <None Include="../../runtimes.props" Pack="true" PackagePath="/" />
+        <InternalsVisibleTo Include="OpenPhysical.Biometrics.NFIQ.Tests" />
+        <Compile Include="../Shared/*.cs" Link="Internal/%(Filename)%(Extension)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+        <PackageReference
+            Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+            Version="10.0.0"
+        />
+        <None
+            Include="../../artifacts/runtimes/nfiq1/**/*"
+            Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            Pack="true"
+            PackagePath="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            CopyToOutputDirectory="PreserveNewest"
+            CopyToPublishDirectory="PreserveNewest"
+        />
+        <None Include="../../README.md" Pack="true" PackagePath="/" />
+        <None Include="../../native/PROVENANCE.md" Pack="true" PackagePath="licenses/" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="../../native/nfiq1/NOTICE.txt" Pack="true" PackagePath="licenses/NFIQ1/" />
+        <None
+            Include="../../native/nfiq1/upstream-origin.json"
+            Pack="true"
+            PackagePath="licenses/NFIQ1/"
+        />
+        <None
+            Include="../../native/nfiq1/upstream-sha256.json"
+            Pack="true"
+            PackagePath="licenses/NFIQ1/"
+        />
+        <None
+            Include="../../native/nfiq1/allocator-provenance.json"
+            Pack="true"
+            PackagePath="licenses/NFIQ1/"
+        />
+    </ItemGroup>
+</Project>

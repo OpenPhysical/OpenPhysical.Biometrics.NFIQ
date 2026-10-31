@@ -1,0 +1,30 @@
+<Project>
+    <!-- Runtime names, filenames, and CI runners are maintained here together. -->
+    <ItemGroup>
+        <QualityRuntime Include="linux-x64">
+            <NativePrefix>lib</NativePrefix>
+            <NativeExtension>so</NativeExtension>
+            <Runner>ubuntu-22.04</Runner>
+        </QualityRuntime>
+        <QualityRuntime Include="linux-arm64">
+            <NativePrefix>lib</NativePrefix>
+            <NativeExtension>so</NativeExtension>
+            <Runner>ubuntu-22.04-arm</Runner>
+        </QualityRuntime>
+        <QualityRuntime Include="osx-x64">
+            <NativePrefix>lib</NativePrefix>
+            <NativeExtension>dylib</NativeExtension>
+            <Runner>macos-15-intel</Runner>
+        </QualityRuntime>
+        <QualityRuntime Include="osx-arm64">
+            <NativePrefix>lib</NativePrefix>
+            <NativeExtension>dylib</NativeExtension>
+            <Runner>macos-15</Runner>
+        </QualityRuntime>
+        <QualityRuntime Include="win-x64">
+            <NativePrefix></NativePrefix>
+            <NativeExtension>dll</NativeExtension>
+            <Runner>windows-latest</Runner>
+        </QualityRuntime>
+    </ItemGroup>
+</Project>

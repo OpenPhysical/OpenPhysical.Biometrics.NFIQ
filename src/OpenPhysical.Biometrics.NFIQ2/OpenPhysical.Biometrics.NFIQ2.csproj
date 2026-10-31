@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <IsPackable>true</IsPackable>
+        <QualityAlgorithm>nfiq2</QualityAlgorithm>
+        <PackageId>OpenPhysical.Biometrics.NFIQ2</PackageId>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <Description>In-memory NIST NFIQ 2 fingerprint image quality assessment for .NET.</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <EmbeddedResource
+            Include="../../runtimes.props"
+            LogicalName="OpenPhysical.Biometrics.NFIQ.runtimes.props"
+        />
+        <None Include="../../runtimes.props" Pack="true" PackagePath="/" />
+        <Compile Include="../Shared/*.cs" Link="Internal/%(Filename)%(Extension)" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.0" />
+        <PackageReference
+            Include="Microsoft.Extensions.DependencyInjection.Abstractions"
+            Version="10.0.0"
+        />
+        <None
+            Include="../../artifacts/runtimes/nfiq2/**/*"
+            Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            Pack="true"
+            PackagePath="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            CopyToOutputDirectory="PreserveNewest"
+            CopyToPublishDirectory="PreserveNewest"
+        />
+        <None Include="../../README.md" Pack="true" PackagePath="/" />
+        <None Include="../../native/PROVENANCE.md" Pack="true" PackagePath="licenses/" />
+    </ItemGroup>
+    <ItemGroup>
+        <None
+            Include="../../native/nfiq2/upstream/LICENSE.md"
+            Pack="true"
+            PackagePath="licenses/NFIQ2/"
+        />
+        <None
+            Include="../../native/nfiq2/upstream/fingerjetfxose/COPY*.txt"
+            Pack="true"
+            PackagePath="licenses/FingerJet/"
+        />
+        <None
+            Include="../../native/nfiq2/upstream/opencv/LICENSE*"
+            Pack="true"
+            PackagePath="licenses/OpenCV/"
+        />
+        <None
+            Include="../../native/nfiq2/upstream/digestpp/LICENSE*"
+            Pack="true"
+            PackagePath="licenses/digestpp/"
+        />
+    </ItemGroup>
+</Project>

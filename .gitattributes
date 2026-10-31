@@ -1,1 +1,3 @@
+* text=auto eol=lf
 native/nfiq1/upstream/** -text
+tests/fixtures/*.gray8 -text -diff

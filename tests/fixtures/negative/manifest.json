@@ -1,0 +1,16 @@
+{
+  "source": "Generated test inputs",
+  "width": 128,
+  "height": 128,
+  "dots_per_inch": 500,
+  "fixtures": [
+    {
+      "filename": "featureless.gray8",
+      "sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee"
+    },
+    {
+      "filename": "truncated.gray8",
+      "sha256": "06eb7d6a69ee19e5fbdf749018d3d2abfa04bcbd1365db312eb86dc7169389b8"
+    }
+  ]
+}

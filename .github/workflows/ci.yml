@@ -1,0 +1,123 @@
+name: NFIQ build and test
+on: [push, pull_request, workflow_dispatch]
+concurrency:
+  group: nfiq-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  runtime-manifest:
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.catalog.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests/scripts
+      - id: catalog
+        run: echo "matrix=$(python scripts/runtime_manifest.py --matrix)" >> "$GITHUB_OUTPUT"
+  runtime:
+    needs: runtime-manifest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.runtime-manifest.outputs.matrix) }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: msys2/setup-msys2@v2
+        id: msys2
+        if: runner.os == 'Windows'
+        with:
+          msystem: UCRT64
+          install: mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-ninja
+      - name: Select Windows native toolchain
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: Add-Content $env:GITHUB_PATH "${{ steps.msys2.outputs.msys2-location }}\ucrt64\bin"
+      - run: dotnet tool restore
+      - run: dotnet csharpier check src tests/OpenPhysical.Biometrics.NFIQ.Tests examples Directory.Build.props Directory.Build.targets runtimes.props
+      - run: python scripts/verify-documentation-gate.py
+      - run: python scripts/verify-fixtures.py
+      - run: python scripts/build-native.py --algorithm nfiq1 --rid ${{ matrix.rid }}
+      - run: python scripts/build-native.py --algorithm nfiq2 --rid ${{ matrix.rid }}
+      - run: python scripts/build-native.py --algorithm nfiq1 --tests
+      - run: python scripts/build-native.py --algorithm nfiq2 --tests
+      - run: dotnet test OpenPhysical.Biometrics.NFIQ.slnx -c Release -m:1 --collect:"XPlat Code Coverage" --results-directory artifacts/coverage/managed
+      - run: dotnet run --project examples/OpenPhysical.Biometrics.NFIQ.Examples -c Release -- --sd04 tests/fixtures
+      - name: Native sanitizers
+        if: runner.os != 'Windows'
+        env:
+          ASAN_OPTIONS: ${{ runner.os == 'Linux' && 'detect_leaks=1' || 'detect_leaks=0' }}
+          UBSAN_OPTIONS: halt_on_error=1
+        run: |
+          python scripts/build-native.py --algorithm nfiq1 --sanitizer asan
+          python scripts/build-native.py --algorithm nfiq1 --sanitizer ubsan
+          python scripts/build-native.py --algorithm nfiq2 --sanitizer asan
+          python scripts/build-native.py --algorithm nfiq2 --sanitizer ubsan
+      - uses: actions/upload-artifact@v4
+        if: always() && runner.os != 'Windows'
+        with:
+          name: sanitizer-diagnostics-${{ matrix.rid }}
+          path: artifacts/sanitizers/
+          if-no-files-found: ignore
+      - name: Native coverage
+        if: matrix.rid == 'linux-x64'
+        run: python scripts/measure-native-coverage.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.rid }}
+          path: artifacts/coverage/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nfiq-${{ matrix.rid }}
+          path: artifacts/runtimes/
+  packages:
+    needs: runtime
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: nfiq-*
+          merge-multiple: true
+          path: artifacts/runtimes
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet pack src/OpenPhysical.Biometrics.NFIQ1 -c Release -m:1
+      - run: dotnet pack src/OpenPhysical.Biometrics.NFIQ2 -c Release -m:1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nfiq-packages
+          path: artifacts/packages/*.nupkg
+  package-consumers:
+    needs: [packages, runtime-manifest]
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.runtime-manifest.outputs.matrix) }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: nfiq-packages
+          path: artifacts/packages
+      - run: python scripts/test-package.py --require-all-runtimes

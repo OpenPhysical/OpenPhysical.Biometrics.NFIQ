@@ -1,0 +1,15 @@
+{
+  "source_repository": "https://github.com/OpenPhysical/OpenPhysical.Biometrics.NBIS",
+  "source_directory": "native/nbis",
+  "license": "GPL-2.0-or-later",
+  "files": {
+    "op_alloc.c": {
+      "sha256": "a6c79ef7f812889b6b1dbeda60e25dfae1d024b7a9520088a84a2fa648bdb891",
+      "git_blob": "40589a3be3ab16110cbb761ba31fead765867226"
+    },
+    "op_alloc.h": {
+      "sha256": "cb19b4f074da1f22e1afd5fbd1cca0a53fa26f06283ce2b672f63fad7598c0d9",
+      "git_blob": "5e970c60de6aff5ecd782c50294f7f6f872d06fc"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "nfiq2": "76b8c4e0b0541f3deab832b1a496e524edc0b5b6",
+  "fingerjetfxose": "d67f329511d65c94d74adacb0678680723d04094",
+  "digestpp": "873b5bbab87a8a62ea7bf2ea8d26733181a2fe8d",
+  "opencv": "71d3237a093b60a27601c20e9ee6c3e52154e8b1",
+  "NFIQ2/nist_plain_tir-ink.txt": {
+    "sha256": "20953015e332d1ef1bcbf29d2208efb372559292a559f652268797716e53db33"
+  },
+  "NFIQ2/nist_plain_tir-ink.yaml": {
+    "sha256": "5b2ba736c354abe5ffbba54102317ea9b1fb8fb59c24e49b71b4e7124280ca30"
+  },
+  "NFIQ2/NFIQ2Algorithm/include/prediction/RandomForestTrainedParams.h": {
+    "sha256": "32c7218355fc6569d60d50c54184909f35c08fa7a8b879eba8b6b91a4ee5b248"
+  }
+}

@@ -1,0 +1,6 @@
+<Solution>
+    <Project Path="src/OpenPhysical.Biometrics.NFIQ1/OpenPhysical.Biometrics.NFIQ1.csproj" />
+    <Project Path="src/OpenPhysical.Biometrics.NFIQ2/OpenPhysical.Biometrics.NFIQ2.csproj" />
+    <Project Path="tests/OpenPhysical.Biometrics.NFIQ.Tests/OpenPhysical.Biometrics.NFIQ.Tests.csproj" />
+    <Project Path="examples/OpenPhysical.Biometrics.NFIQ.Examples/OpenPhysical.Biometrics.NFIQ.Examples.csproj" />
+</Solution>

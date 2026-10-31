@@ -1,0 +1,482 @@
+1
+1
+2
+2
+1
+2
+1
+3
+4888	225	92	92	91	78	17
+0.106383	0.165098	0.229133	0.499386
+1	0.71
+5014	224	83	83	83	75	28
+0.079378	0.129836	0.242521	0.548265
+1	0.55
+4725	196	82	82	80	72	44
+0.097354	0.141799	0.231958	0.528889
+2	0.46
+3017	136	38	38	38	31	13
+0.121975	0.177991	0.221412	0.478621
+2	0.28
+1960	74	35	35	35	33	4
+0.132653	0.081122	0.185204	0.601020
+1	0.72
+2038	87	32	32	32	31	19
+0.166340	0.119235	0.247301	0.467125
+2	0.44
+2259	110	42	42	42	41	15
+0.140328	0.118637	0.208499	0.532537
+1	0.61
+1150	55	11	11	11	9	2
+0.173043	0.173043	0.268696	0.385217
+3	0.38
+LEN field index [2.1] [Type-14.001] updated (42500 now 42508)
+Inserted field index [2.14] [Type-14.022]
+Inserted subfield index [2.14.1] [Type-14.022]
+LEN field index [2.1] [Type-14.001] updated (42508 now 42509)
+Inserted item index [2.14.1.1] [Type-14.022] = 1
+LEN field index [2.1] [Type-14.001] updated (42509 now 42511)
+Inserted item index [2.14.1.2] [Type-14.022] = 1
+LEN field index [3.1] [Type-14.001] updated (43314 now 43322)
+Inserted field index [3.14] [Type-14.022]
+Inserted subfield index [3.14.1] [Type-14.022]
+LEN field index [3.1] [Type-14.001] updated (43322 now 43323)
+Inserted item index [3.14.1.1] [Type-14.022] = 2
+LEN field index [3.1] [Type-14.001] updated (43323 now 43325)
+Inserted item index [3.14.1.2] [Type-14.022] = 5
+LEN field index [4.1] [Type-14.001] updated (41289 now 41297)
+Inserted field index [4.14] [Type-14.022]
+Inserted subfield index [4.14.1] [Type-14.022]
+LEN field index [4.1] [Type-14.001] updated (41297 now 41298)
+Inserted item index [4.14.1.1] [Type-14.022] = 3
+LEN field index [4.1] [Type-14.001] updated (41298 now 41300)
+Inserted item index [4.14.1.2] [Type-14.022] = 5
+LEN field index [5.1] [Type-14.001] updated (39164 now 39172)
+Inserted field index [5.14] [Type-14.022]
+Inserted subfield index [5.14.1] [Type-14.022]
+LEN field index [5.1] [Type-14.001] updated (39172 now 39173)
+Inserted item index [5.14.1.1] [Type-14.022] = 4
+LEN field index [5.1] [Type-14.001] updated (39173 now 39175)
+Inserted item index [5.14.1.2] [Type-14.022] = 1
+LEN field index [6.1] [Type-14.001] updated (41290 now 41298)
+Inserted field index [6.14] [Type-14.022]
+Inserted subfield index [6.14.1] [Type-14.022]
+LEN field index [6.1] [Type-14.001] updated (41298 now 41299)
+Inserted item index [6.14.1.1] [Type-14.022] = 5
+LEN field index [6.1] [Type-14.001] updated (41299 now 41301)
+Inserted item index [6.14.1.2] [Type-14.022] = 5
+LEN field index [7.1] [Type-14.001] updated (41778 now 41786)
+Inserted field index [7.14] [Type-14.022]
+Inserted subfield index [7.14.1] [Type-14.022]
+LEN field index [7.1] [Type-14.001] updated (41786 now 41787)
+Inserted item index [7.14.1.1] [Type-14.022] = 6
+LEN field index [7.1] [Type-14.001] updated (41787 now 41789)
+Inserted item index [7.14.1.2] [Type-14.022] = 1
+LEN field index [8.1] [Type-14.001] updated (41079 now 41087)
+Inserted field index [8.14] [Type-14.022]
+Inserted subfield index [8.14.1] [Type-14.022]
+LEN field index [8.1] [Type-14.001] updated (41087 now 41088)
+Inserted item index [8.14.1.1] [Type-14.022] = 7
+LEN field index [8.1] [Type-14.001] updated (41088 now 41090)
+Inserted item index [8.14.1.2] [Type-14.022] = 5
+LEN field index [9.1] [Type-14.001] updated (42648 now 42656)
+Inserted field index [9.14] [Type-14.022]
+Inserted subfield index [9.14.1] [Type-14.022]
+LEN field index [9.1] [Type-14.001] updated (42656 now 42657)
+Inserted item index [9.14.1.1] [Type-14.022] = 8
+LEN field index [9.1] [Type-14.001] updated (42657 now 42659)
+Inserted item index [9.14.1.2] [Type-14.022] = 1
+LEN field index [10.1] [Type-14.001] updated (39065 now 39073)
+Inserted field index [10.14] [Type-14.022]
+Inserted subfield index [10.14.1] [Type-14.022]
+LEN field index [10.1] [Type-14.001] updated (39073 now 39074)
+Inserted item index [10.14.1.1] [Type-14.022] = 9
+LEN field index [10.1] [Type-14.001] updated (39074 now 39076)
+Inserted item index [10.14.1.2] [Type-14.022] = 3
+LEN field index [11.1] [Type-14.001] updated (35403 now 35411)
+Inserted field index [11.14] [Type-14.022]
+Inserted subfield index [11.14.1] [Type-14.022]
+LEN field index [11.1] [Type-14.001] updated (35411 now 35413)
+Inserted item index [11.14.1.1] [Type-14.022] = 10
+LEN field index [11.1] [Type-14.001] updated (35413 now 35415)
+Inserted item index [11.14.1.2] [Type-14.022] = 5
+WARNING : main : ignoring multi-finger slap, record index [12] [Type-14] fgp 14
+LEN field index [13.1] [Type-14.001] updated (28258 now 28266)
+Inserted field index [13.14] [Type-14.022]
+Inserted subfield index [13.14.1] [Type-14.022]
+LEN field index [13.1] [Type-14.001] updated (28266 now 28268)
+Inserted item index [13.14.1.1] [Type-14.022] = 12
+LEN field index [13.1] [Type-14.001] updated (28268 now 28270)
+Inserted item index [13.14.1.2] [Type-14.022] = 3
+LEN field index [14.1] [Type-14.001] updated (23110 now 23118)
+Inserted field index [14.14] [Type-14.022]
+Inserted subfield index [14.14.1] [Type-14.022]
+LEN field index [14.1] [Type-14.001] updated (23118 now 23120)
+Inserted item index [14.14.1.1] [Type-14.022] = 11
+LEN field index [14.1] [Type-14.001] updated (23120 now 23122)
+Inserted item index [14.14.1.2] [Type-14.022] = 3
+WARNING : main : ignoring multi-finger slap, record index [15] [Type-14] fgp 13
+2 1 1
+3 2 5
+4 3 5
+5 4 1
+6 5 5
+7 6 1
+8 7 5
+9 8 1
+10 9 3
+11 10 5
+13 12 3
+14 11 3
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (209 now 212)
+Inserted item index [1.3.2.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (212 now 215)
+Inserted item index [1.3.2.2] [Type-1.003] = 00
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [2] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (215 now 210)
+Deleted subfield index [1.3.3] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [3] [Type-4]
+LEN field index [2.1] [Type-14.001] updated (42453 now 42461)
+Inserted field index [2.14] [Type-14.022]
+Inserted subfield index [2.14.1] [Type-14.022]
+LEN field index [2.1] [Type-14.001] updated (42461 now 42462)
+Inserted item index [2.14.1.1] [Type-14.022] = 1
+LEN field index [2.1] [Type-14.001] updated (42462 now 42464)
+Inserted item index [2.14.1.2] [Type-14.022] = 1
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (210 now 213)
+Inserted item index [1.3.3.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (213 now 216)
+Inserted item index [1.3.3.2] [Type-1.003] = 01
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [3] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (216 now 211)
+Deleted subfield index [1.3.4] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [4] [Type-4]
+LEN field index [3.1] [Type-14.001] updated (43265 now 43273)
+Inserted field index [3.14] [Type-14.022]
+Inserted subfield index [3.14.1] [Type-14.022]
+LEN field index [3.1] [Type-14.001] updated (43273 now 43274)
+Inserted item index [3.14.1.1] [Type-14.022] = 2
+LEN field index [3.1] [Type-14.001] updated (43274 now 43276)
+Inserted item index [3.14.1.2] [Type-14.022] = 5
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (211 now 214)
+Inserted item index [1.3.4.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (214 now 217)
+Inserted item index [1.3.4.2] [Type-1.003] = 02
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [4] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (217 now 212)
+Deleted subfield index [1.3.5] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [5] [Type-4]
+LEN field index [4.1] [Type-14.001] updated (41239 now 41247)
+Inserted field index [4.14] [Type-14.022]
+Inserted subfield index [4.14.1] [Type-14.022]
+LEN field index [4.1] [Type-14.001] updated (41247 now 41248)
+Inserted item index [4.14.1.1] [Type-14.022] = 3
+LEN field index [4.1] [Type-14.001] updated (41248 now 41250)
+Inserted item index [4.14.1.2] [Type-14.022] = 5
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (212 now 215)
+Inserted item index [1.3.5.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (215 now 218)
+Inserted item index [1.3.5.2] [Type-1.003] = 03
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [5] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (218 now 213)
+Deleted subfield index [1.3.6] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [6] [Type-4]
+LEN field index [5.1] [Type-14.001] updated (39114 now 39122)
+Inserted field index [5.14] [Type-14.022]
+Inserted subfield index [5.14.1] [Type-14.022]
+LEN field index [5.1] [Type-14.001] updated (39122 now 39123)
+Inserted item index [5.14.1.1] [Type-14.022] = 4
+LEN field index [5.1] [Type-14.001] updated (39123 now 39125)
+Inserted item index [5.14.1.2] [Type-14.022] = 1
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (213 now 216)
+Inserted item index [1.3.6.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (216 now 219)
+Inserted item index [1.3.6.2] [Type-1.003] = 04
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [6] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (219 now 214)
+Deleted subfield index [1.3.7] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [7] [Type-4]
+LEN field index [6.1] [Type-14.001] updated (41240 now 41248)
+Inserted field index [6.14] [Type-14.022]
+Inserted subfield index [6.14.1] [Type-14.022]
+LEN field index [6.1] [Type-14.001] updated (41248 now 41249)
+Inserted item index [6.14.1.1] [Type-14.022] = 5
+LEN field index [6.1] [Type-14.001] updated (41249 now 41251)
+Inserted item index [6.14.1.2] [Type-14.022] = 5
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (214 now 217)
+Inserted item index [1.3.7.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (217 now 220)
+Inserted item index [1.3.7.2] [Type-1.003] = 05
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [7] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (220 now 215)
+Deleted subfield index [1.3.8] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [8] [Type-4]
+LEN field index [7.1] [Type-14.001] updated (41729 now 41737)
+Inserted field index [7.14] [Type-14.022]
+Inserted subfield index [7.14.1] [Type-14.022]
+LEN field index [7.1] [Type-14.001] updated (41737 now 41738)
+Inserted item index [7.14.1.1] [Type-14.022] = 6
+LEN field index [7.1] [Type-14.001] updated (41738 now 41740)
+Inserted item index [7.14.1.2] [Type-14.022] = 1
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (215 now 218)
+Inserted item index [1.3.8.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (218 now 221)
+Inserted item index [1.3.8.2] [Type-1.003] = 06
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [8] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (221 now 216)
+Deleted subfield index [1.3.9] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [9] [Type-4]
+LEN field index [8.1] [Type-14.001] updated (41028 now 41036)
+Inserted field index [8.14] [Type-14.022]
+Inserted subfield index [8.14.1] [Type-14.022]
+LEN field index [8.1] [Type-14.001] updated (41036 now 41037)
+Inserted item index [8.14.1.1] [Type-14.022] = 7
+LEN field index [8.1] [Type-14.001] updated (41037 now 41039)
+Inserted item index [8.14.1.2] [Type-14.022] = 5
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (216 now 219)
+Inserted item index [1.3.9.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (219 now 222)
+Inserted item index [1.3.9.2] [Type-1.003] = 07
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [9] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (222 now 217)
+Deleted subfield index [1.3.10] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [10] [Type-4]
+LEN field index [9.1] [Type-14.001] updated (42596 now 42604)
+Inserted field index [9.14] [Type-14.022]
+Inserted subfield index [9.14.1] [Type-14.022]
+LEN field index [9.1] [Type-14.001] updated (42604 now 42605)
+Inserted item index [9.14.1.1] [Type-14.022] = 8
+LEN field index [9.1] [Type-14.001] updated (42605 now 42607)
+Inserted item index [9.14.1.2] [Type-14.022] = 1
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (217 now 220)
+Inserted item index [1.3.10.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (220 now 223)
+Inserted item index [1.3.10.2] [Type-1.003] = 08
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [10] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (223 now 218)
+Deleted subfield index [1.3.11] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [11] [Type-4]
+LEN field index [10.1] [Type-14.001] updated (39013 now 39021)
+Inserted field index [10.14] [Type-14.022]
+Inserted subfield index [10.14.1] [Type-14.022]
+LEN field index [10.1] [Type-14.001] updated (39021 now 39022)
+Inserted item index [10.14.1.1] [Type-14.022] = 9
+LEN field index [10.1] [Type-14.001] updated (39022 now 39024)
+Inserted item index [10.14.1.2] [Type-14.022] = 3
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (218 now 221)
+Inserted item index [1.3.11.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (221 now 224)
+Inserted item index [1.3.11.2] [Type-1.003] = 09
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [11] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (224 now 219)
+Deleted subfield index [1.3.12] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [12] [Type-4]
+LEN field index [11.1] [Type-14.001] updated (35351 now 35359)
+Inserted field index [11.14] [Type-14.022]
+Inserted subfield index [11.14.1] [Type-14.022]
+LEN field index [11.1] [Type-14.001] updated (35359 now 35361)
+Inserted item index [11.14.1.1] [Type-14.022] = 10
+LEN field index [11.1] [Type-14.001] updated (35361 now 35363)
+Inserted item index [11.14.1.2] [Type-14.022] = 5
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (219 now 222)
+Inserted item index [1.3.12.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (222 now 225)
+Inserted item index [1.3.12.2] [Type-1.003] = 10
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [12] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (225 now 220)
+Deleted subfield index [1.3.13] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [13] [Type-4]
+WARNING : main : ignoring multi-finger slap, record index [12] [Type-14] fgp 14
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (220 now 223)
+Inserted item index [1.3.13.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (223 now 226)
+Inserted item index [1.3.13.2] [Type-1.003] = 11
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [13] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (226 now 221)
+Deleted subfield index [1.3.14] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [14] [Type-4]
+LEN field index [13.1] [Type-14.001] updated (28205 now 28213)
+Inserted field index [13.14] [Type-14.022]
+Inserted subfield index [13.14.1] [Type-14.022]
+LEN field index [13.1] [Type-14.001] updated (28213 now 28215)
+Inserted item index [13.14.1.1] [Type-14.022] = 12
+LEN field index [13.1] [Type-14.001] updated (28215 now 28217)
+Inserted item index [13.14.1.2] [Type-14.022] = 3
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (221 now 224)
+Inserted item index [1.3.14.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (224 now 227)
+Inserted item index [1.3.14.2] [Type-1.003] = 12
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [14] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (227 now 222)
+Deleted subfield index [1.3.15] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [15] [Type-4]
+LEN field index [14.1] [Type-14.001] updated (23057 now 23065)
+Inserted field index [14.14] [Type-14.022]
+Inserted subfield index [14.14.1] [Type-14.022]
+LEN field index [14.1] [Type-14.001] updated (23065 now 23067)
+Inserted item index [14.14.1.1] [Type-14.022] = 11
+LEN field index [14.1] [Type-14.001] updated (23067 now 23069)
+Inserted item index [14.14.1.2] [Type-14.022] = 3
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (222 now 225)
+Inserted item index [1.3.15.1] [Type-1.003] = 14
+LEN field index [1.1] [Type-1.001] updated (225 now 228)
+Inserted item index [1.3.15.2] [Type-1.003] = 13
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 14
+   New value = 15
+Inserted record index [15] [Type-14]
+Updating CNT field [Type-1.003]
+LEN field index [1.1] [Type-1.001] updated (228 now 223)
+Deleted subfield index [1.3.16] in record [Type-1.003]
+Substituted item index [1.3.1.2] [Type-1.003]
+   Old value = 15
+   New value = 14
+Updating IDCs
+Deleted record index [16] [Type-4]
+WARNING : main : ignoring multi-finger slap, record index [15] [Type-14] fgp 13
+2 1 1
+3 2 5
+4 3 5
+5 4 1
+6 5 5
+7 6 1
+8 7 5
+9 8 1
+10 9 3
+11 10 5
+13 12 3
+14 11 3
+3 2 5
+2 1 1
+3 2 5
+4 3 5
+5 4 1
+6 5 5
+7 6 1
+8 7 5
+9 8 1
+10 9 3
+11 10 5
+5 4 1
+2 1 1
+4888	225	92	92	91	78	17
+0.106383	0.165098	0.229133	0.499386
+1	0.71
