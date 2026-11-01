@@ -178,7 +178,7 @@ void boltz_work(float *awt_p, char boltzmann, float temperature, int layer,
 
   awt = *awt_p;
   if(uni(0) <= exp(-(double)(
-    ((boltzmann == ABS_PRUNE) ? fabs((double)awt) : awt * awt)
+    ((boltzmann == ABS_PRUNE) ? fabs((double)awt) : (double)awt * awt)
     / temperature))) { /* Do prune this weight. */
     *awt_p = 0.;
     if(layer == 1)

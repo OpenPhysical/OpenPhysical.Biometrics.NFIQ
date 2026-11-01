@@ -1,0 +1,550 @@
+{
+  "commonnbis/src/lib/clapck/slagtf.c": {
+    "sha256": "57d4c96c69322276ed250ea42f3e5f1e696368f91c243bc9d7eb9aab780f7a53",
+    "hunks": [
+      {
+        "line": 252,
+        "before": [
+          "    if ((r__1 = A(*n), dabs(r__1)) <= scale1 * tl && IN(*n) == 0) {\n"
+        ],
+        "after": [
+          "    if ((r__1 = A(*n), dabs(r__1)) <= (double)scale1 * tl && IN(*n) == 0) {\n"
+        ]
+      }
+    ]
+  },
+  "commonnbis/src/lib/clapck/slagts.c": {
+    "sha256": "9441113346a8d8026e3e4e9079ce1ca92cfa9c06f5d0112f7e32030a2b1f196d",
+    "hunks": [
+      {
+        "line": 261,
+        "before": [
+          "\t\t    } else if (dabs(temp) > absak * bignum) {\n"
+        ],
+        "after": [
+          "\t\t    } else if (dabs(temp) > (double)absak * bignum) {\n"
+        ]
+      },
+      {
+        "line": 292,
+        "before": [
+          "\t\t    } else if (dabs(temp) > absak * bignum) {\n"
+        ],
+        "after": [
+          "\t\t    } else if (dabs(temp) > (double)absak * bignum) {\n"
+        ]
+      },
+      {
+        "line": 327,
+        "before": [
+          "\t\t    } else if (dabs(temp) > absak * bignum) {\n"
+        ],
+        "after": [
+          "\t\t    } else if (dabs(temp) > (double)absak * bignum) {\n"
+        ]
+      },
+      {
+        "line": 359,
+        "before": [
+          "\t\t    } else if (dabs(temp) > absak * bignum) {\n"
+        ],
+        "after": [
+          "\t\t    } else if (dabs(temp) > (double)absak * bignum) {\n"
+        ]
+      }
+    ]
+  },
+  "commonnbis/src/lib/clapck/sstein.c": {
+    "sha256": "2060d6a5590b323609ad29969a15884401309e5c2585a211feb5b61bf24f9ab3",
+    "hunks": [
+      {
+        "line": 390,
+        "before": [
+          "\t    scl = blksiz * onenrm * dmax(r__2,r__3) / sasum_(&blksiz, &WORK(\n"
+        ],
+        "after": [
+          "\t    scl = (double)blksiz * onenrm * dmax(r__2,r__3) / sasum_(&blksiz, &WORK(\n"
+        ]
+      }
+    ]
+  },
+  "mindtct/src/lib/mindtct/binar.c": {
+    "sha256": "739eb25a930682fd1e913a70a7935b8041b2593bcb53c1d3d7e826a22ccde848",
+    "hunks": [
+      {
+        "line": 217,
+        "before": [
+          "   bdata = (unsigned char *)malloc(bw*bh*sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "   bdata = (unsigned char *)malloc((size_t)bw*bh*sizeof(unsigned char));\n"
+        ]
+      },
+      {
+        "line": 299,
+        "before": [
+          "   bdata = (unsigned char *)malloc(bw*bh*sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "   bdata = (unsigned char *)malloc((size_t)bw*bh*sizeof(unsigned char));\n"
+        ]
+      }
+    ]
+  },
+  "mindtct/src/lib/mindtct/maps.c": {
+    "sha256": "8771e03e38a5e6a2ebb6a4a589e9c1d42e776f84bbe2d0be1bd9c4c70cfc67b8",
+    "hunks": [
+      {
+        "line": 495,
+        "before": [
+          "   omap = (int *)malloc(mw*mh*sizeof(int));\n"
+        ],
+        "after": [
+          "   omap = (int *)malloc((size_t)mw*mh*sizeof(int));\n"
+        ]
+      },
+      {
+        "line": 638,
+        "before": [
+          "   memcpy(direction_map, omap, mw*mh*sizeof(int));\n"
+        ],
+        "after": [
+          "   memcpy(direction_map, omap, (size_t)mw*mh*sizeof(int));\n"
+        ]
+      },
+      {
+        "line": 731,
+        "before": [
+          "   pmap = (int *)malloc(iw*ih*sizeof(int));\n"
+        ],
+        "after": [
+          "   pmap = (int *)malloc((size_t)iw*ih*sizeof(int));\n"
+        ]
+      }
+    ]
+  },
+  "mindtct/src/lib/mindtct/quality.c": {
+    "sha256": "8afbcfc730a221109792459da929d9c091f3630f6f7a810cfcfe85c6922ec931",
+    "hunks": [
+      {
+        "line": 117,
+        "before": [
+          "   QualMap = (int *)malloc(map_w * map_h * sizeof(int));\n"
+        ],
+        "after": [
+          "   QualMap = (int *)malloc((size_t)map_w * map_h * sizeof(int));\n"
+        ]
+      }
+    ]
+  },
+  "mindtct/src/lib/mindtct/results.c": {
+    "sha256": "5bd83e4d7d96ef6ec15206ab67885c300b331850c03189b0a30f6c7257c33d3b",
+    "hunks": [
+      {
+        "line": 785,
+        "before": [
+          "   tmap = (int *)malloc(mw*mh*sizeof(int));\n"
+        ],
+        "after": [
+          "   tmap = (int *)malloc((size_t)mw*mh*sizeof(int));\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/include/little.h.src": {
+    "sha256": "792285da910ba327930cde3a88bdd3e32b2f579537031a6a074a51b112f53bfc",
+    "hunks": [
+      {
+        "line": 46,
+        "before": [],
+        "after": [
+          "#include <stddef.h>\n"
+        ]
+      },
+      {
+        "line": 68,
+        "before": [
+          "extern char *malloc_ch(const int);\n"
+        ],
+        "after": [
+          "extern char *malloc_ch(const size_t);\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/mlp/accum.c": {
+    "sha256": "8542c05b386f6fc1831b38d97fda4562db45e8f478b9bf0d3890319977bf8ce6",
+    "hunks": [
+      {
+        "line": 118,
+        "before": [
+          "    if((confuse_acc.buf = (float *)malloc(nouts * nouts *\n"
+        ],
+        "after": [
+          "    if((confuse_acc.buf = (float *)malloc((size_t)nouts * nouts *\n"
+        ]
+      },
+      {
+        "line": 122,
+        "before": [
+          "    if((outlvl.buf = (float *)malloc(nouts * nouts * sizeof(float)))\n"
+        ],
+        "after": [
+          "    if((outlvl.buf = (float *)malloc((size_t)nouts * nouts * sizeof(float)))\n"
+        ]
+      },
+      {
+        "line": 157,
+        "before": [
+          "    memset((char *)confuse_acc.buf, 0, nouts_loc * nouts_loc *\n"
+        ],
+        "after": [
+          "    memset((char *)confuse_acc.buf, 0, (size_t)nouts_loc * nouts_loc *\n"
+        ]
+      },
+      {
+        "line": 161,
+        "before": [
+          "    memset((char *)outlvl.buf, 0, nouts_loc * nouts_loc * sizeof(float));\n"
+        ],
+        "after": [
+          "    memset((char *)outlvl.buf, 0, (size_t)nouts_loc * nouts_loc * sizeof(float));\n"
+        ]
+      },
+      {
+        "line": 300,
+        "before": [
+          "    if((confuse_wtd_counts.buf = (int *)malloc(nouts_loc * nouts_loc *\n"
+        ],
+        "after": [
+          "    if((confuse_wtd_counts.buf = (int *)malloc((size_t)nouts_loc * nouts_loc *\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/mlp/boltz.c": {
+    "sha256": "07eca0c74b2ea7338d3c3c2345ab10b3a2512e2d17b376bc02cafc742f9c5ce9",
+    "hunks": [
+      {
+        "line": 180,
+        "before": [
+          "    ((boltzmann == ABS_PRUNE) ? fabs((double)awt) : awt * awt)\n"
+        ],
+        "after": [
+          "    ((boltzmann == ABS_PRUNE) ? fabs((double)awt) : (double)awt * awt)\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/mlp/e_and_g.c": {
+    "sha256": "91c1930ebf171543d358bc6e6f08d6e7424599528640efff84d23e777e550dd6",
+    "hunks": [
+      {
+        "line": 320,
+        "before": [
+          "      fprintf(fp_long_outfile, \"%6d = %2d %c %2d\",\n"
+        ],
+        "after": [
+          "      fprintf(fp_long_outfile, \"%6td = %2d %c %2d\",\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/mlp/getpat.c": {
+    "sha256": "f3f17519cf819d5f17d1eacc9e6cee7c8d3cb65e0d942ee80abfae6baaf8a839",
+    "hunks": [
+      {
+        "line": 272,
+        "before": [
+          "  if((*vinp = (float *)malloc(npats * ninps * sizeof(float))) ==\n"
+        ],
+        "after": [
+          "  if((*vinp = (float *)malloc((size_t)npats * ninps * sizeof(float))) ==\n"
+        ]
+      },
+      {
+        "line": 283,
+        "before": [
+          "    if((*target = (float *)malloc(npats * nouts * sizeof(float))) ==\n"
+        ],
+        "after": [
+          "    if((*target = (float *)malloc((size_t)npats * nouts * sizeof(float))) ==\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/mlp/lbfgs.c": {
+    "sha256": "74f89f0210bcce7d425660dcc76b61879e2fa8926c239c76a3e42059a5c017a9",
+    "hunks": [
+      {
+        "line": 926,
+        "before": [
+          "    if(f <= ftest1 && fabs((double)dg) <= gtol * (-dginit))\n"
+        ],
+        "after": [
+          "    if(f <= ftest1 && fabs((double)dg) <= (double)gtol * (-dginit))\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pca/eigen.c": {
+    "sha256": "99a7018ade53d67de00eb601bf891ec275c88b2ea91001e9ed881ba5512672ec",
+    "hunks": [
+      {
+        "line": 96,
+        "before": [
+          "   *evts = (float *)malloc(*nevtf * order * sizeof(float));\n"
+        ],
+        "after": [
+          "   *evts = (float *)malloc((size_t)*nevtf * order * sizeof(float));\n"
+        ]
+      },
+      {
+        "line": 103,
+        "before": [
+          "   for(i = 0; i < *nevtf; i++) {\n",
+          "      if(nfail && ifail[bad] == i) {\n"
+        ],
+        "after": [
+          "   for(i = 0; i < nevtr; i++) {\n",
+          "      if(bad < nfail && ifail[bad] == i) {\n"
+        ]
+      },
+      {
+        "line": 189,
+        "before": [
+          "   int *ffail;\n"
+        ],
+        "after": []
+      },
+      {
+        "line": 204,
+        "before": [
+          "   if((*evts = (float *)malloc(nevtf*order * sizeof(float))) == NULL) {\n"
+        ],
+        "after": [
+          "   if((*evts = (float *)malloc((size_t)nevtf*order * sizeof(float))) == NULL) {\n"
+        ]
+      },
+      {
+        "line": 300,
+        "before": [
+          "      if (ifail) {\t/* pointer acting as flag */\n",
+          "         ffail = (int *)malloc(*info*sizeof(int));\n"
+        ],
+        "after": []
+      },
+      {
+        "line": 307,
+        "before": [
+          "         for (i = 0; i < *info ; i++)\n",
+          "            ffail[i] = *info - tifail[i];\n",
+          "         *ifail = ffail;\n",
+          "      }\n"
+        ],
+        "after": [
+          "         /* eigen() consumes failed indices in ascending order. */\n",
+          "         for (i = 0; i < *info ; i++) {\n",
+          "            int failed = nevtf - tifail[i];\n",
+          "            for (j = i; j > 0 && (*ifail)[j - 1] > failed; j--)\n",
+          "               (*ifail)[j] = (*ifail)[j - 1];\n",
+          "            (*ifail)[j] = failed;\n",
+          "         }\n"
+        ]
+      },
+      {
+        "line": 316,
+        "before": [
+          "      *ifail = (int *)malloc(sizeof(int));\n",
+          "      *ifail[0] = -1;\n"
+        ],
+        "after": [
+          "      (*ifail)[0] = -1;\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pca/grphcs.c": {
+    "sha256": "97ff1b57df83061fa53c3b3e7931f2bf07981a3fd183a857fdd1f410070c97c6",
+    "hunks": [
+      {
+        "line": 254,
+        "before": [
+          "  buf = (unsigned char *)malloc_ch(w * h);\n",
+          "  memcpy(buf, ras, w * h * sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "  buf = (unsigned char *)malloc_ch((size_t)w * h);\n",
+          "  memcpy(buf, ras, (size_t)w * h * sizeof(unsigned char));\n"
+        ]
+      },
+      {
+        "line": 296,
+        "before": [
+          "  buf = (unsigned char *)malloc_ch(w * h);\n",
+          "  memcpy(buf, outsquare, w * h * sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "  buf = (unsigned char *)malloc_ch((size_t)w * h);\n",
+          "  memcpy(buf, outsquare, (size_t)w * h * sizeof(unsigned char));\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pca/sgmnt.c": {
+    "sha256": "a07b176e312d6427a8823788f827d2286fe7d3b4940ea8a5a65b4846fce0b215",
+    "hunks": [
+      {
+        "line": 213,
+        "before": [
+          "    memset(fg_arr[i], 0, fgw * fgh * sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "    memset(fg_arr[i], 0, (size_t)fgw * fgh * sizeof(unsigned char));\n"
+        ]
+      },
+      {
+        "line": 243,
+        "before": [
+          "  memcpy(fg, fg_arr[best_ifac], fgw * fgh * sizeof(unsigned char));\n"
+        ],
+        "after": [
+          "  memcpy(fg, fg_arr[best_ifac], (size_t)fgw * fgh * sizeof(unsigned char));\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pcautil/io_c.c": {
+    "sha256": "c86bd3ae1affb7c378b53a466af6305d15931fbda3589ae6da15090483708c3a",
+    "hunks": [
+      {
+        "line": 535,
+        "before": [
+          "    fread(tcptr, sizeof(float), *n * *ncls, fp);\n"
+        ],
+        "after": [
+          "    fread(tcptr, sizeof(float), (size_t)*n * *ncls, fp);\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pcautil/io_m.c": {
+    "sha256": "320e882d92a3aa8b505ed2b442f9a40c93eb25f270a7ecca5ecff6901ee9ab93",
+    "hunks": [
+      {
+        "line": 215,
+        "before": [
+          "    fwrite(the_floats, sizeof(float), dim1 * dim2, fp);\n"
+        ],
+        "after": [
+          "    fwrite(the_floats, sizeof(float), (size_t)dim1 * dim2, fp);\n"
+        ]
+      },
+      {
+        "line": 564,
+        "before": [
+          "      fseek(fp, row_start * dim2 * sizeof(float), 0);\n"
+        ],
+        "after": [
+          "      fseek(fp, (size_t)row_start * dim2 * sizeof(float), 0);\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pcautil/io_v.c": {
+    "sha256": "fd606da1c8c9f14a18ae83924bec3bc700aeb4a4d91156cfb428f74b4360298e",
+    "hunks": [
+      {
+        "line": 353,
+        "before": [
+          "    if(!(*the_floats = (float *)malloc(the_order * the_order *\n"
+        ],
+        "after": [
+          "    if(!(*the_floats = (float *)malloc((size_t)the_order * the_order *\n"
+        ]
+      },
+      {
+        "line": 379,
+        "before": [
+          "    if(!(*the_floats = (float *)malloc(the_order * the_order *\n"
+        ],
+        "after": [
+          "    if(!(*the_floats = (float *)malloc((size_t)the_order * the_order *\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pcautil/little.c": {
+    "sha256": "882cf4ffda2087c68f111fa53e50d3b69c668404a3a91a60d9d6668747e42736",
+    "hunks": [
+      {
+        "line": 300,
+        "before": [
+          "char *malloc_ch(const int nbytes)\n"
+        ],
+        "after": [
+          "char *malloc_ch(const size_t nbytes)\n"
+        ]
+      },
+      {
+        "line": 305,
+        "before": [
+          "    sprintf(str, \"malloc of %d bytes failed\", nbytes);\n"
+        ],
+        "after": [
+          "    sprintf(str, \"malloc of %zu bytes failed\", nbytes);\n"
+        ]
+      }
+    ]
+  },
+  "pcasys/src/lib/pcautil/optrws_r.c": {
+    "sha256": "9d1fc86410aa72005722c8ce2fa17143c09836dd3451ada272c4e56d665c33f1",
+    "hunks": [
+      {
+        "line": 99,
+        "before": [
+          "    tranmat = (float *)malloc_ch(n_feats_use * n_feats_use *\n"
+        ],
+        "after": [
+          "    tranmat = (float *)malloc_ch((size_t)n_feats_use * n_feats_use *\n"
+        ]
+      },
+      {
+        "line": 101,
+        "before": [
+          "    trfvs = (float *)malloc_ch(n_klfvs_use * n_feats_use *\n"
+        ],
+        "after": [
+          "    trfvs = (float *)malloc_ch((size_t)n_klfvs_use * n_feats_use *\n"
+        ]
+      },
+      {
+        "line": 136,
+        "before": [
+          "    workbuf = (float *)malloc_ch(n_feats_use * evt_sz * sizeof(float));\n"
+        ],
+        "after": [
+          "    workbuf = (float *)malloc_ch((size_t)n_feats_use * evt_sz * sizeof(float));\n"
+        ]
+      },
+      {
+        "line": 176,
+        "before": [
+          "\ta += workbuf[i*evt_sz+k] * eigvecs[j*evt_sz+k];\n"
+        ],
+        "after": [
+          "\ta += (double)workbuf[i*evt_sz+k] * eigvecs[j*evt_sz+k];\n"
+        ]
+      },
+      {
+        "line": 196,
+        "before": [
+          "\ta += *r++ * *s++;\n"
+        ],
+        "after": [
+          "\ta += (double)*r++ * *s++;\n"
+        ]
+      }
+    ]
+  }
+}

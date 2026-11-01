@@ -318,7 +318,7 @@ use_targvecs", NULL);
       class; and the output activations.  (Show class and hyp class
       as 1-based numbers for compatibility with old files, even though
       they are internally represented as 0-based.) */
-      fprintf(fp_long_outfile, "%6d = %2d %c %2d",
+      fprintf(fp_long_outfile, "%6td = %2d %c %2d",
         patwts_p - patwts + 1, class + 1,
         (class == hyp_class ? 'R' : 'W'), hyp_class + 1);
       for(outacs_p = outacs; outacs_p < outacs_e; outacs_p++)

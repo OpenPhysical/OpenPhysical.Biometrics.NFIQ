@@ -213,7 +213,7 @@ newline", outfile);
     the_floats = tfloats;
 #endif
 
-    fwrite(the_floats, sizeof(float), dim1 * dim2, fp);
+    fwrite(the_floats, sizeof(float), (size_t)dim1 * dim2, fp);
 
 #ifdef __NBISLE__
     free(tfloats);
@@ -562,7 +562,7 @@ buffer failed", infile);
       fatalerr("matrix_read_submatrix", "malloc of submatrix \
 buffer failed", infile);
     if(row_start > 0)
-      fseek(fp, row_start * dim2 * sizeof(float), 0);
+      fseek(fp, (size_t)row_start * dim2 * sizeof(float), 0);
     i = col_finish - col_start + 1;
     j = col_start * sizeof(float);
     k = (dim2 - 1 - col_finish) * sizeof(float);

@@ -533,7 +533,7 @@ PCASYS_CLASSES_FILE", infile);
 
     malloc_flt(&tcptr, *n * *ncls, "classes_read_vec the_classes");
     *the_classes = tcptr;
-    fread(tcptr, sizeof(float), *n * *ncls, fp);
+    fread(tcptr, sizeof(float), (size_t)*n * *ncls, fp);
 #ifdef __NBISLE__
     swap_float_bytes_vec(tcptr, *n * *ncls);
 #endif

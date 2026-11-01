@@ -97,9 +97,9 @@ float rws_to_acerror(float *rws, const int w, const int h, float *eigvecs,
     firstcall = 0;
     /* Allocate reusable buffers for transform matrix and for
     transformed feature vectors. */
-    tranmat = (float *)malloc_ch(n_feats_use * n_feats_use *
+    tranmat = (float *)malloc_ch((size_t)n_feats_use * n_feats_use *
       sizeof(float));
-    trfvs = (float *)malloc_ch(n_klfvs_use * n_feats_use *
+    trfvs = (float *)malloc_ch((size_t)n_klfvs_use * n_feats_use *
       sizeof(float));
   }
   make_tranmat(rws, w, h, n_feats_use, eigvecs, evt_sz, tranmat);
@@ -134,7 +134,7 @@ void make_tranmat(float *rws, const int rw, const int rh,
 
   if(firstcall) {
     firstcall = 0;
-    workbuf = (float *)malloc_ch(n_feats_use * evt_sz * sizeof(float));
+    workbuf = (float *)malloc_ch((size_t)n_feats_use * evt_sz * sizeof(float));
     diag = (float *)malloc_ch(evt_sz * sizeof(float));
   }
 
@@ -174,7 +174,7 @@ void diag_to_tranmat(float *diag, const int n_feats_use, float *eigvecs,
   for(i = 0, p = tranmat; i < n_feats_use; i++)
     for(j = 0; j < n_feats_use; j++) {
       for(k = 0, a = 0.; k < evt_sz; k++)
-	a += workbuf[i*evt_sz+k] * eigvecs[j*evt_sz+k];
+	a += (double)workbuf[i*evt_sz+k] * eigvecs[j*evt_sz+k];
       *p++ = a;
     }
 }
@@ -194,7 +194,7 @@ void transform_featvecs(const int n_feats_use, float *tranmat,
   for(k = 0, p = fvs, q = fvs_tr; k < n_fvs; k++, p += n_feats_use)
     for(i = 0, r = tranmat; i < n_feats_use; i++) {
       for(j = 0, s = p, a = 0.; j < n_feats_use; j++)
-	a += *r++ * *s++;
+	a += (double)*r++ * *s++;
       *q++ = a;
     }
 }

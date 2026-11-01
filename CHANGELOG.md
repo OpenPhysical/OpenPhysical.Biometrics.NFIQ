@@ -5,6 +5,9 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Fix CodeQL arithmetic and native correctness findings, retaining verifiable
+  original NIST source receipts and adding overflow regression coverage.
+
 ## 1.0.0 - 2026-11-01
 
 - First stable NFIQ1 and NFIQ2 package release, with the compatibility contract

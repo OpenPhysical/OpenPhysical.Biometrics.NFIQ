@@ -259,7 +259,7 @@ of the software.
 			    temp *= bignum;
 			    ak *= bignum;
 			}
-		    } else if (dabs(temp) > absak * bignum) {
+		    } else if (dabs(temp) > (double)absak * bignum) {
 			*info = k;
 			return 0;
 		    }
@@ -290,7 +290,7 @@ L40:
 			    temp *= bignum;
 			    ak *= bignum;
 			}
-		    } else if (dabs(temp) > absak * bignum) {
+		    } else if (dabs(temp) > (double)absak * bignum) {
 			ak += pert;
 			pert *= 2;
 			goto L40;
@@ -325,7 +325,7 @@ L40:
 			    temp *= bignum;
 			    ak *= bignum;
 			}
-		    } else if (dabs(temp) > absak * bignum) {
+		    } else if (dabs(temp) > (double)absak * bignum) {
 			*info = k;
 			return 0;
 		    }
@@ -357,7 +357,7 @@ L70:
 			    temp *= bignum;
 			    ak *= bignum;
 			}
-		    } else if (dabs(temp) > absak * bignum) {
+		    } else if (dabs(temp) > (double)absak * bignum) {
 			ak += pert;
 			pert *= 2;
 			goto L70;

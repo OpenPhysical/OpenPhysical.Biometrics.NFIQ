@@ -270,7 +270,7 @@ is FITTER:\nThis mode allows for varying target vectors.", NULL);
   /* Read the patterns and store appropriate data into memory.  (Only
   load first ninps (can be < minps) elts of each feature vector.)
   First allocate output buffers. */
-  if((*vinp = (float *)malloc(npats * ninps * sizeof(float))) ==
+  if((*vinp = (float *)malloc((size_t)npats * ninps * sizeof(float))) ==
     (float *)NULL)
     syserr("getpat", "malloc", "*vinp");
   if(purpose == CLASSIFIER) {
@@ -281,7 +281,7 @@ is FITTER:\nThis mode allows for varying target vectors.", NULL);
     *target = (float *)NULL;
   }
   else { /* purpose == FITTER */
-    if((*target = (float *)malloc(npats * nouts * sizeof(float))) ==
+    if((*target = (float *)malloc((size_t)npats * nouts * sizeof(float))) ==
       (float *)NULL)
       syserr("getpat", "malloc", "*target");
     target_p = *target;

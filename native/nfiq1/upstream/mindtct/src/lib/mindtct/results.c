@@ -783,7 +783,7 @@ int draw_TF_map(char *oname, int *map,
    int bx, by, bi;
    int *tmap;
 
-   tmap = (int *)malloc(mw*mh*sizeof(int));
+   tmap = (int *)malloc((size_t)mw*mh*sizeof(int));
    if(tmap == (int *)NULL){
       fprintf(stderr, "ERROR : draw_TF_map : malloc : tmap\n");
       return(-570);

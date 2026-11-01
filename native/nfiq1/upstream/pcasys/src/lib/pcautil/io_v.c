@@ -351,7 +351,7 @@ void covariance_read_old(char *infile, char **desc, int *order,
   if(asc_or_bin == PCASYS_ASCII_FILE) {
     fscanf(fp, "%d %d", order, nvecs);
     the_order = *order;
-    if(!(*the_floats = (float *)malloc(the_order * the_order *
+    if(!(*the_floats = (float *)malloc((size_t)the_order * the_order *
       sizeof(float)))) {
        fprintf(stderr, "malloc of *the_floats failed %s\n", infile);
        exit(-1);
@@ -377,7 +377,7 @@ void covariance_read_old(char *infile, char **desc, int *order,
 #endif
 
     the_order = *order;
-    if(!(*the_floats = (float *)malloc(the_order * the_order *
+    if(!(*the_floats = (float *)malloc((size_t)the_order * the_order *
       sizeof(float)))) {
        fprintf(stderr, "malloc of *the_floats failed %s\n", infile);
        exit(-1);

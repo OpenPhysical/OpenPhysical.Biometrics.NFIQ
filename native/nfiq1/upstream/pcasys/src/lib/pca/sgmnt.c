@@ -211,7 +211,7 @@ int sgmnt_make_fg(unsigned char *origras, const int w, const int h,
   reasonable limits, select the one with the fewest transitions. */
   range = maxpix - minpix;
   for(i = 0; i < sgmnt_fac_n; i++)
-    memset(fg_arr[i], 0, fgw * fgh * sizeof(unsigned char));
+    memset(fg_arr[i], 0, (size_t)fgw * fgh * sizeof(unsigned char));
   for(ifac = k = 0, fac = sgmnt_fac_min; ifac < sgmnt_fac_n;
     ifac++, fac += sgmnt_fac_del) {
     thresh = minpix + fac * range + .5;
@@ -241,7 +241,7 @@ int sgmnt_make_fg(unsigned char *origras, const int w, const int h,
   }
   if(!k)
     return 1;
-  memcpy(fg, fg_arr[best_ifac], fgw * fgh * sizeof(unsigned char));
+  memcpy(fg, fg_arr[best_ifac], (size_t)fgw * fgh * sizeof(unsigned char));
 #ifdef GRPHCS
   grphcs_sgmntwork_fg(fg, 0);
 #endif
