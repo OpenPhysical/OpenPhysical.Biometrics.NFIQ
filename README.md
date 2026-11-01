@@ -140,7 +140,7 @@ dotnet test OpenPhysical.Biometrics.NFIQ.slnx -c Release
 ```
 
 Pass `--sanitizer asan` or `--sanitizer ubsan` for separate instrumented native test
-builds. Package native assets are unsanitized release builds. The five runtime
+builds. Package native assets are unsanitized release builds. The runtime
 identifiers and CI runners are defined in [runtimes.props](runtimes.props).
 Asset selection uses the operating system and process architecture, including
 .NET installations supplied by Linux distributions. Linux builds
