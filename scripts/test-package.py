@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-2.0-or-later
 """Consume both packages outside the repository and check the missing-library path."""
-import argparse,subprocess,tempfile,zipfile,hashlib
+import argparse,subprocess,tempfile,zipfile,hashlib,re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from runtime_manifest import load_runtimes, native_file
@@ -24,6 +24,11 @@ for algorithm in ('nfiq1', 'nfiq2'):
    assert license_node.text == 'NFIQ2-PACKAGE-LICENSE.md'
    for term in ['Apache-2.0', 'LGPL-3.0-or-later', 'Unlicense']:
     assert term in z.read(license_node.text).decode()
+  spec = ET.fromstring(z.read(next(n for n in z.namelist() if n.endswith('.nuspec'))))
+  assert spec.findtext('.//{*}icon') == 'package-icon.png'
+  assert z.read('package-icon.png').startswith(b'\x89PNG\r\n\x1a\n')
+  assert 'biometrics' in spec.findtext('.//{*}tags')
+  assert not re.search(r'\]\((?!https?://|#)[^)]+\)', z.read('README.md').decode())
   seen = set()
   for name in z.namelist():
    if '/native/libopencv_' in name:

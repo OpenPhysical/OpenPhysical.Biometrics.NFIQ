@@ -25,6 +25,8 @@
         <Company>OpenPhysical</Company>
         <Copyright>Copyright © 2026 Mistial Developer</Copyright>
         <PackageLicenseExpression>GPL-2.0-or-later</PackageLicenseExpression>
+        <PackageIcon>package-icon.png</PackageIcon>
+        <PackageTags>fingerprint;biometrics;nfiq;nist;quality</PackageTags>
         <PackageProjectUrl>https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ</PackageProjectUrl>
         <RepositoryUrl>https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -39,6 +41,7 @@
         <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" />
     </ItemGroup>
     <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)package-icon.png" Pack="true" PackagePath="/" />
         <None Include="$(MSBuildThisFileDirectory)LICENSE" Pack="true" PackagePath="/" />
         <None Include="$(MSBuildThisFileDirectory)NOTICE" Pack="true" PackagePath="/" />
         <None
