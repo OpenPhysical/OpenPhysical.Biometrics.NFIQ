@@ -7,7 +7,16 @@ library helps an enrollment application assess those captures, choose an image
 to retain, and explain when another impression would help. Each assessment keeps
 the algorithm's original quality scale and outcome.
 
-The current prerelease packages are **0.1.0-beta.1**. Choose the package that fits your workflow:
+The shared package version is **1.0.0**, the first stable release. Packages are
+published under the **OpenPhysical** NuGet organization. The links below show
+the current publication status; a release becomes installable only after the
+[publishing workflow](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/actions/workflows/publish.yml)
+and NuGet validation finish.
+
+[![NFIQ1 on NuGet](https://img.shields.io/nuget/v/OpenPhysical.Biometrics.NFIQ1)](https://www.nuget.org/packages/OpenPhysical.Biometrics.NFIQ1)
+[![NFIQ2 on NuGet](https://img.shields.io/nuget/v/OpenPhysical.Biometrics.NFIQ2)](https://www.nuget.org/packages/OpenPhysical.Biometrics.NFIQ2)
+
+Choose the package that fits your workflow:
 
 - `OpenPhysical.Biometrics.NFIQ1` returns a **class from 1 to 5**, with 1 best,
   together with the original classifier confidence and capture status.
@@ -44,6 +53,13 @@ workflows. Keep both measurements with their algorithm versions when storing
 assessment results.
 
 ## Using the libraries
+
+Install either or both packages once version 1.0.0 is available on NuGet:
+
+```sh
+dotnet add package OpenPhysical.Biometrics.NFIQ1 --version 1.0.0
+dotnet add package OpenPhysical.Biometrics.NFIQ2 --version 1.0.0
+```
 
 Both packages accept tightly packed, top-left-origin, 8-bit grayscale pixels.
 Black is 0 and white is 255. Supply dimensions and **500 ppi** explicitly; each
@@ -137,6 +153,11 @@ only its own native algorithm and runtime dependencies. NFIQ2's replaceable
 FingerJet and OpenCV shared libraries travel alongside the wrapper.
 
 ## Testing and contributing
+
+Publishing a GitHub release automatically validates and publishes both packages
+through NuGet trusted publishing, without stored API keys. See the
+[release guide](docs/RELEASING.md) and [changelog](CHANGELOG.md). Feature branches
+run checks on pull requests only; `master` also runs checks after pushes.
 
 The [validation record](docs/VALIDATION.md) explains how we compare the adapted
 library with NIST's reference code. Our fixtures include twenty SD04 impressions,

@@ -1,6 +1,6 @@
 # Releasing
 
-Publishing a GitHub release automatically publishes the NFIQ1 and NFIQ2 to
+Publishing a GitHub release automatically publishes the NFIQ1 and NFIQ2 packages to
 NuGet.org under the OpenPhysical organization. No stored API key is needed.
 
 1. Update the shared version in `Directory.Build.props` and date its changelog
