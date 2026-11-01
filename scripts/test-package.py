@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: GPL-2.0-or-later
 """Consume both packages outside the repository and check the missing-library path."""
-import argparse,subprocess,tempfile,zipfile
+import argparse,subprocess,tempfile,zipfile,hashlib
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from runtime_manifest import load_runtimes, native_file
@@ -16,6 +16,12 @@ for algorithm in ('nfiq1', 'nfiq2'):
    for entry in load_runtimes():
     assert f"runtimes/{entry['rid']}/native/{native_file(entry, algorithm)}" in z.namelist(), entry['rid']
   assert not any('/fixtures/' in n or n.endswith('.gray8') for n in z.namelist())
+  seen = set()
+  for name in z.namelist():
+   if '/native/libopencv_' in name:
+    key = (str(Path(name).parent), hashlib.sha256(z.read(name)).digest())
+    assert key not in seen, f'Duplicate OpenCV payload: {name}'
+    seen.add(key)
 with tempfile.TemporaryDirectory(prefix='nfiq-consumer-') as temp:
  d=Path(temp)
  (d/'Consumer.csproj').write_text(f'<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><RestorePackagesPath>{d / "packages"}</RestorePackagesPath></PropertyGroup><ItemGroup><PackageReference Include="OpenPhysical.Biometrics.NFIQ1" Version="{a.version}"/><PackageReference Include="OpenPhysical.Biometrics.NFIQ2" Version="{a.version}"/></ItemGroup></Project>')

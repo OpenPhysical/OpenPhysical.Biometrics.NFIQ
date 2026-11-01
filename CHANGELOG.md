@@ -5,6 +5,8 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Package each OpenCV library once under its loader ABI name (#13).
+
 - Publish portable symbol packages and normalize CI build paths (#12).
 
 - Fix CodeQL arithmetic and native correctness findings, retaining verifiable
