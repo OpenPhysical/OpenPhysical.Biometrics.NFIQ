@@ -2,10 +2,11 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 """Consume both packages outside the repository and check the missing-library path."""
 import argparse,subprocess,tempfile,zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from runtime_manifest import load_runtimes, native_file
 ROOT=Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('--version',default='0.1.0-beta.1');p.add_argument('--require-all-runtimes', action='store_true');a=p.parse_args()
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--version',default=ET.parse(ROOT/'Directory.Build.props').findtext('./PropertyGroup/Version'));p.add_argument('--require-all-runtimes', action='store_true');a=p.parse_args()
 feed=ROOT/'artifacts/packages'
 for algorithm in ('nfiq1', 'nfiq2'):
  package=feed/f'OpenPhysical.Biometrics.{algorithm.upper()}.{a.version}.nupkg'

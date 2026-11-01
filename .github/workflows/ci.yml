@@ -1,7 +1,12 @@
 name: NFIQ build and test
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
 concurrency:
-  group: nfiq-${{ github.ref }}
+  group: nfiq-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 permissions:
   contents: read
