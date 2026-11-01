@@ -5,6 +5,8 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Publish portable symbol packages and normalize CI build paths (#12).
+
 - Fix CodeQL arithmetic and native correctness findings, retaining verifiable
   original NIST source receipts and adding overflow regression coverage.
 
