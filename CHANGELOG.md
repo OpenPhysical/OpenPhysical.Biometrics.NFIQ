@@ -5,6 +5,9 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Flatten and deduplicate Windows runtime licenses and correct extensionless
+  NuGet asset paths (#14).
+
 - Package each OpenCV library once under its loader ABI name (#13).
 
 - Publish portable symbol packages and normalize CI build paths (#12).

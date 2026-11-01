@@ -4,7 +4,7 @@
 import argparse,hashlib,json,platform,shutil,subprocess,os,sys
 from pathlib import Path
 from runtime_manifest import load_runtimes
-from native_assets import deduplicate_opencv
+from native_assets import deduplicate_opencv, stage_runtime_licenses
 ROOT=Path(__file__).resolve().parents[1]
 def run(*args):subprocess.run(list(map(str,args)),check=True,cwd=ROOT)
 def main():
@@ -52,8 +52,7 @@ def main():
     shutil.copy2(dependency,stage/name)
    licenses=toolchain.parent/'share/licenses'
    if not licenses.is_dir():raise SystemExit('Missing compiler runtime license directory.')
-   for folder in licenses.iterdir():
-    if any(term in folder.name.lower() for term in ['gcc','winpthread','mingw-w64-libraries']):
-     if folder.is_dir():shutil.copytree(folder,stage/'licenses'/folder.name,dirs_exist_ok=True)
+   stage_runtime_licenses(licenses,stage/'licenses')
+
 
 if __name__=='__main__':main()

@@ -24,7 +24,7 @@
             Include="../../artifacts/runtimes/nfiq2/**/*"
             Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
             Pack="true"
-            PackagePath="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            PackagePath="runtimes/%(RecursiveDir)"
             CopyToOutputDirectory="PreserveNewest"
             CopyToPublishDirectory="PreserveNewest"
         />

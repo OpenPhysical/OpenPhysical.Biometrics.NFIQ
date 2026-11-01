@@ -16,6 +16,7 @@ for algorithm in ('nfiq1', 'nfiq2'):
    for entry in load_runtimes():
     assert f"runtimes/{entry['rid']}/native/{native_file(entry, algorithm)}" in z.namelist(), entry['rid']
   assert not any('/fixtures/' in n or n.endswith('.gray8') for n in z.namelist())
+  assert all(name.count('win-x64/native/licenses') <= 1 for name in z.namelist()), 'Repeated Windows license paths'
   seen = set()
   for name in z.namelist():
    if '/native/libopencv_' in name:
