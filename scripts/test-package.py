@@ -17,6 +17,13 @@ for algorithm in ('nfiq1', 'nfiq2'):
     assert f"runtimes/{entry['rid']}/native/{native_file(entry, algorithm)}" in z.namelist(), entry['rid']
   assert not any('/fixtures/' in n or n.endswith('.gray8') for n in z.namelist())
   assert all(name.count('win-x64/native/licenses') <= 1 for name in z.namelist()), 'Repeated Windows license paths'
+  if algorithm == 'nfiq2':
+   nuspec = ET.fromstring(z.read(next(n for n in z.namelist() if n.endswith('.nuspec'))))
+   license_node = nuspec.find('.//{*}license')
+   assert license_node.attrib['type'] == 'file'
+   assert license_node.text == 'NFIQ2-PACKAGE-LICENSE.md'
+   for term in ['Apache-2.0', 'LGPL-3.0-or-later', 'Unlicense']:
+    assert term in z.read(license_node.text).decode()
   seen = set()
   for name in z.namelist():
    if '/native/libopencv_' in name:

@@ -180,3 +180,14 @@ available under [the project terms](COMMERCIAL-LICENSING.md). NFIQ2 dependencies
 retain their LGPLv3, Apache 2.0 and public-domain terms; see
 [third-party notices](THIRD_PARTY_NOTICES.md) and the corresponding-source and
 replacement instructions there. Fixtures credit Craig I. Watson and NIST.
+
+### Bundled native licenses
+
+NFIQ2 includes OpenCV (Apache-2.0), FingerJetFX OSE (LGPL-3.0-or-later),
+and digestpp (Unlicense), alongside NIST's own notices and the first-party
+GPL-2.0-or-later binding. Its NuGet license metadata points to the
+[component license inventory](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/NFIQ2-PACKAGE-LICENSE.md).
+Full license texts ship in `licenses/`; Windows runtime notices also ship under
+`runtimes/win-x64/native/licenses/`. See
+[third-party notices](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/THIRD_PARTY_NOTICES.md)
+for corresponding-source and replacement instructions.
