@@ -5,6 +5,15 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+## 1.0.0 - 2026-11-01
+
+- First stable NFIQ1 and NFIQ2 package release, with the compatibility contract
+  described in CONTRIBUTING.md.
+- Publish both packages automatically to the OpenPhysical NuGet organization when
+  a GitHub release is published, after runtime and package-consumer checks pass.
+  Authentication uses NuGet trusted publishing without stored API keys.
+- Run feature-branch CI on pull requests only, avoiding duplicate push checks.
+
 - Share the runtime catalog across managed loading, native builds, release checks, CI runners, and package-consumer tests.
 
 ## 0.1.0-beta.1 - 2026-10-31
