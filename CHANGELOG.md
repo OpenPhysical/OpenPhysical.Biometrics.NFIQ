@@ -5,6 +5,8 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Refer to the runtime manifest instead of duplicating its count in documentation (#15).
+
 - Flatten and deduplicate Windows runtime licenses and correct extensionless
   NuGet asset paths (#14).
 

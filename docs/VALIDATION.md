@@ -26,7 +26,7 @@ The model hash and baseline scores remain unchanged after the adaptations.
 CI defines native builds, managed tests, sanitizer checks and complete-package
 consumption on every runtime in [runtimes.props](../runtimes.props). Runtime packages
 for local validation contain the current host's assets. Published releases collect
-and validate all five runtime builds through the complete-package matrix.
+and validate every runtime build listed in `runtimes.props` through the complete-package matrix.
 
 The upstream sources remain unmodified. Native adaptation details and exact
 source/dependency pins are recorded in native/PROVENANCE.md and upstream locks.

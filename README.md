@@ -147,7 +147,7 @@ Asset selection uses the operating system and process architecture, including
 use Ubuntu 22.04 (glibc 2.35). Native macOS deployment target is 12; .NET 10's host
 support requires macOS 14 or later. Run managed builds and tests serially.
 
-Complete release packing requires all five algorithm runtime directories. Local
+Complete release packing requires every algorithm runtime directory listed in `runtimes.props`. Local
 package checks can use `-p:AllowPartialQualityRuntimes=true`. Each package contains
 only its own native algorithm and runtime dependencies. NFIQ2's replaceable
 FingerJet and OpenCV shared libraries travel alongside the wrapper.
