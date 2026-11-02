@@ -94,15 +94,15 @@ void eigen(const int nevtr, int *nevtf, float **evts, float **evas,
 
    *nevtf = nevtr - nfail;
 
-   *evts = (float *)malloc(*nevtf * order * sizeof(float));
+   *evts = (float *)malloc((size_t)*nevtf * order * sizeof(float));
    *evas = (float *)malloc(*nevtf * sizeof(float));
 
    pevts = *evts;
    pevas = *evas;
    good = 0;
    bad = 0;
-   for(i = 0; i < *nevtf; i++) {
-      if(nfail && ifail[bad] == i) {
+   for(i = 0; i < nevtr; i++) {
+      if(bad < nfail && ifail[bad] == i) {
          fprintf(stderr, "failed convergence on evect %d ", i);
          fprintf(stderr, "evect / eval pair deleted\n");
          bad++;
@@ -187,7 +187,6 @@ void diag_mat_eigen(const int order, float *mat, const int nevtf,
    int i, j;
    static int i1;
    float a;
-   int *ffail;
    char *routine = "ssytrd";
    char *parms = "VIL";
    int ord;
@@ -203,7 +202,7 @@ void diag_mat_eigen(const int order, float *mat, const int nevtf,
       fprintf(stderr, "Error allocing evas\n");
       exit(-1);
    }
-   if((*evts = (float *)malloc(nevtf*order * sizeof(float))) == NULL) {
+   if((*evts = (float *)malloc((size_t)nevtf*order * sizeof(float))) == NULL) {
       fprintf(stderr, "Error allocing evts\n");
       exit(-1);
    }
@@ -299,8 +298,6 @@ void diag_mat_eigen(const int order, float *mat, const int nevtf,
 
    if (*info) {  /* info > 0: then some (actually info) eigenvectors
    		   failed to converge, and their indices are in indexfail. */
-      if (ifail) {	/* pointer acting as flag */
-         ffail = (int *)malloc(*info*sizeof(int));
 
          /*
          This handles for the reversal of the order of the
@@ -308,14 +305,16 @@ void diag_mat_eigen(const int order, float *mat, const int nevtf,
          1-based indices to C 0-based indices.
          */
 
-         for (i = 0; i < *info ; i++)
-            ffail[i] = *info - tifail[i];
-         *ifail = ffail;
-      }
+         /* eigen() consumes failed indices in ascending order. */
+         for (i = 0; i < *info ; i++) {
+            int failed = nevtf - tifail[i];
+            for (j = i; j > 0 && (*ifail)[j - 1] > failed; j--)
+               (*ifail)[j] = (*ifail)[j - 1];
+            (*ifail)[j] = failed;
+         }
    }
    else {
-      *ifail = (int *)malloc(sizeof(int));
-      *ifail[0] = -1;
+      (*ifail)[0] = -1;
    }
 
    free(tifail);

@@ -388,7 +388,7 @@ L70:
 
    Computing MAX */
 	    r__2 = eps, r__3 = (r__1 = WORK(indrv4 + blksiz), dabs(r__1));
-	    scl = blksiz * onenrm * dmax(r__2,r__3) / sasum_(&blksiz, &WORK(
+	    scl = (double)blksiz * onenrm * dmax(r__2,r__3) / sasum_(&blksiz, &WORK(
 		    indrv1 + 1), &c__1);
 	    sscal_(&blksiz, &scl, &WORK(indrv1 + 1), &c__1);
 

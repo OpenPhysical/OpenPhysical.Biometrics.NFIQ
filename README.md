@@ -36,8 +36,8 @@ library loading, and .NET integration. The original NIST files are preserved
 unmodified in the first Git commit. Build-time adaptations stay separate, so their
 purpose and effect can be reviewed against that starting point.
 
-The [provenance record](native/PROVENANCE.md) identifies the source checksums,
-dependency versions and adaptations. The [changelog](CHANGELOG.md) records changes
+The [provenance record](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/native/PROVENANCE.md) identifies the source checksums,
+dependency versions and adaptations. The [changelog](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/CHANGELOG.md) records changes
 to the .NET library.
 
 ## Where it fits in PIV
@@ -105,7 +105,7 @@ code **0** is an unexpected failure, including exceptions that NFIQ2 wraps befor
 they reach the binding. `HasUpstreamErrorCode` distinguishes that real code from
 **-1**, the binding's unavailable-code sentinel.
 
-The [runnable workflows](examples/OpenPhysical.Biometrics.NFIQ.Examples/QualityWorkflows.cs)
+The [runnable workflows](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/examples/OpenPhysical.Biometrics.NFIQ.Examples/QualityWorkflows.cs)
 show a single capture, paired SD04 impressions, LINQ-based candidate selection,
 typed JSON records, and poor-capture/malformed-input handling. Comments explain
 how each step fits an enrollment application. Example selection limits are
@@ -140,14 +140,14 @@ dotnet test OpenPhysical.Biometrics.NFIQ.slnx -c Release
 ```
 
 Pass `--sanitizer asan` or `--sanitizer ubsan` for separate instrumented native test
-builds. Package native assets are unsanitized release builds. The five runtime
-identifiers and CI runners are defined in [runtimes.props](runtimes.props).
+builds. Package native assets are unsanitized release builds. The runtime
+identifiers and CI runners are defined in [runtimes.props](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/runtimes.props).
 Asset selection uses the operating system and process architecture, including
 .NET installations supplied by Linux distributions. Linux builds
 use Ubuntu 22.04 (glibc 2.35). Native macOS deployment target is 12; .NET 10's host
 support requires macOS 14 or later. Run managed builds and tests serially.
 
-Complete release packing requires all five algorithm runtime directories. Local
+Complete release packing requires every algorithm runtime directory listed in `runtimes.props`. Local
 package checks can use `-p:AllowPartialQualityRuntimes=true`. Each package contains
 only its own native algorithm and runtime dependencies. NFIQ2's replaceable
 FingerJet and OpenCV shared libraries travel alongside the wrapper.
@@ -156,10 +156,10 @@ FingerJet and OpenCV shared libraries travel alongside the wrapper.
 
 Publishing a GitHub release automatically validates and publishes both packages
 through NuGet trusted publishing, without stored API keys. See the
-[release guide](docs/RELEASING.md) and [changelog](CHANGELOG.md). Feature branches
+[release guide](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/docs/RELEASING.md) and [changelog](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/CHANGELOG.md). Feature branches
 run checks on pull requests only; `master` also runs checks after pushes.
 
-The [validation record](docs/VALIDATION.md) explains how we compare the adapted
+The [validation record](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/docs/VALIDATION.md) explains how we compare the adapted
 library with NIST's reference code. Our fixtures include twenty SD04 impressions,
 eight published NBIS NFIQ1 release captures and five published NFIQ2 examples.
 µnit owns exact native algorithm results and memory-safety checks; NUnit checks
@@ -167,16 +167,27 @@ the .NET binding, typed outcomes and reuse workflows. CI retains native and mana
 coverage reports. CSharpier formatting and complete public XML documentation are
 required build gates.
 
-See [contributing](CONTRIBUTING.md) for development and contributor terms,
-the [Bounded Contribution Policy](CODE_OF_CONDUCT.md) for participation, and
-[security reporting](SECURITY.md) for privately reporting a vulnerability.
+See [contributing](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/CONTRIBUTING.md) for development and contributor terms,
+the [Bounded Contribution Policy](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/CODE_OF_CONDUCT.md) for participation, and
+[security reporting](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/SECURITY.md) for privately reporting a vulnerability.
 
 ## Source and licensing
 
-[Source provenance](native/PROVENANCE.md) records the official upstream releases,
+[Source provenance](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/native/PROVENANCE.md) records the official upstream releases,
 source checksums, dependency pins and adaptations. The first commit imports the
 original source. First-party code is GPL-2.0-or-later with commercial licensing
-available under [the project terms](COMMERCIAL-LICENSING.md). NFIQ2 dependencies
+available under [the project terms](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/COMMERCIAL-LICENSING.md). NFIQ2 dependencies
 retain their LGPLv3, Apache 2.0 and public-domain terms; see
-[third-party notices](THIRD_PARTY_NOTICES.md) and the corresponding-source and
+[third-party notices](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/THIRD_PARTY_NOTICES.md) and the corresponding-source and
 replacement instructions there. Fixtures credit Craig I. Watson and NIST.
+
+### Bundled native licenses
+
+NFIQ2 includes OpenCV (Apache-2.0), FingerJetFX OSE (LGPL-3.0-or-later),
+and digestpp (Unlicense), alongside NIST's own notices and the first-party
+GPL-2.0-or-later binding. Its NuGet license metadata points to the
+[component license inventory](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/NFIQ2-PACKAGE-LICENSE.md).
+Full license texts ship in `licenses/`; Windows runtime notices also ship under
+`runtimes/win-x64/native/licenses/`. See
+[third-party notices](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/blob/master/THIRD_PARTY_NOTICES.md)
+for corresponding-source and replacement instructions.

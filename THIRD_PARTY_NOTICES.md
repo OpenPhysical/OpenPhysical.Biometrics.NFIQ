@@ -5,7 +5,7 @@ NFIQ1 uses original NIST NBIS 5.0.0 public-domain sources. Its complete notice i
 
 NFIQ2 v2.3.0 original licensing is retained in
 [native/nfiq2/upstream/LICENSE.md](native/nfiq2/upstream/LICENSE.md).
-FingerJetFX OSE is LGPLv3; OpenCV is Apache 2.0; digestpp is public domain.
+FingerJetFX OSE is LGPL-3.0-or-later; OpenCV is Apache 2.0; digestpp is public domain.
 Their complete notices and source are retained in the recursively pinned upstream
 repository. NFIQ2 binary packages include those notices. Copyrights and notices
 for bundled OpenCV dependencies remain in the pinned OpenCV source tree.

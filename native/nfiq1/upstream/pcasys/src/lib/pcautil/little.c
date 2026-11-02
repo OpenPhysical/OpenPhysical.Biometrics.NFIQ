@@ -298,12 +298,12 @@ int linreg(int *xp, int *yp, const int n, float *a_ret, float *b_ret)
 
 /* Tries a malloc; calls fatalerr in case of failure */
 
-char *malloc_ch(const int nbytes)
+char *malloc_ch(const size_t nbytes)
 {
   char *p, str[100];
 
   if(!(p = malloc(nbytes))) {
-    sprintf(str, "malloc of %d bytes failed", nbytes);
+    sprintf(str, "malloc of %zu bytes failed", nbytes);
     fatalerr("malloc_ch", str, NULL);
   }
   return p;

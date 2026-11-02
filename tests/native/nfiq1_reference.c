@@ -9,8 +9,8 @@ int main(int argc, char **argv) {
     return 3;
   int width = argc == 4 ? atoi(argv[2]) : 512;
   int height = argc == 4 ? atoi(argv[3]) : 512;
-  unsigned char *p = malloc(width * height);
-  if (fread(p, 1, width * height, f) != (size_t)(width * height))
+  unsigned char *p = malloc((size_t)width * height);
+  if (fread(p, 1, (size_t)width * height, f) != ((size_t)width * height))
     return 4;
   fclose(f);
   int q = 0, flag = 0;

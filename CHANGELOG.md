@@ -5,6 +5,25 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Preserve native-library and Windows-license paths in NFIQ2 packages; verify
+  every staged runtime file against the packed archive before upload (#14).
+
+- Add the OpenPhysical package icon, discovery tags, and absolute package README links (#17).
+
+- Point NFIQ2 package license metadata to its bundled-component license inventory (#16).
+
+- Refer to the runtime manifest instead of duplicating its count in documentation (#15).
+
+- Flatten and deduplicate Windows runtime licenses and correct extensionless
+  NuGet asset paths (#14).
+
+- Package each OpenCV library once under its loader ABI name (#13).
+
+- Publish portable symbol packages and normalize CI build paths (#12).
+
+- Fix CodeQL arithmetic and native correctness findings, retaining verifiable
+  original NIST source receipts and adding overflow regression coverage.
+
 ## 1.0.0 - 2026-11-01
 
 - First stable NFIQ1 and NFIQ2 package release, with the compatibility contract

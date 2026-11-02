@@ -924,7 +924,7 @@ direction\n");
       *info = 3;
     if(brackt && stmax - stmin <= xtol * stmax)
       *info = 2;
-    if(f <= ftest1 && fabs((double)dg) <= gtol * (-dginit))
+    if(f <= ftest1 && fabs((double)dg) <= (double)gtol * (-dginit))
       *info = 1;
 
     /* Check for termination. */

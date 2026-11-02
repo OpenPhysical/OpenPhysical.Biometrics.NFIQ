@@ -116,11 +116,11 @@ void accum_init(int nouts, char do_confuse, float oklvl)
   oklvl_loc = oklvl;
   if(do_confuse) {
     confuse_acc.dim2 = nouts;
-    if((confuse_acc.buf = (float *)malloc(nouts * nouts *
+    if((confuse_acc.buf = (float *)malloc((size_t)nouts * nouts *
       sizeof(float))) == (float *)NULL)
       syserr("accum_init (accum.c)", "malloc", "confuse_acc.buf");
     outlvl.dim2 = nouts;
-    if((outlvl.buf = (float *)malloc(nouts * nouts * sizeof(float)))
+    if((outlvl.buf = (float *)malloc((size_t)nouts * nouts * sizeof(float)))
       == (float *)NULL)
       syserr("accum_init (accum.c)", "malloc", "outlvl.buf");
     if((npats_bc = (int *)malloc(nouts * sizeof(float))) ==
@@ -155,11 +155,11 @@ void accum_zero(char do_confuse)
   memset((char *)outrej, 0, nouts_loc * sizeof(float));
 
   if(do_confuse)
-    memset((char *)confuse_acc.buf, 0, nouts_loc * nouts_loc *
+    memset((char *)confuse_acc.buf, 0, (size_t)nouts_loc * nouts_loc *
       sizeof(float));
 
   if(do_confuse) {
-    memset((char *)outlvl.buf, 0, nouts_loc * nouts_loc * sizeof(float));
+    memset((char *)outlvl.buf, 0, (size_t)nouts_loc * nouts_loc * sizeof(float));
     memset((char *)npats_bc, 0, nouts_loc * sizeof(int));
   }
   sum1 = sum2 = 0.;
@@ -298,7 +298,7 @@ void accum_print(char do_confuse, char purpose, int npats, int iter,
       (int *)NULL)
       syserr("accum_print (accum.c)", "malloc", "wtd_nrej_bc");
     confuse_wtd_counts.dim2 = nouts_loc;
-    if((confuse_wtd_counts.buf = (int *)malloc(nouts_loc * nouts_loc *
+    if((confuse_wtd_counts.buf = (int *)malloc((size_t)nouts_loc * nouts_loc *
       sizeof(int))) == (int *)NULL)
       syserr("accum_print (accum.c)", "malloc",
         "confuse_wtd_counts.buf");

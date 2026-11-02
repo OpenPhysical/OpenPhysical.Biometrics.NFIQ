@@ -1,14 +1,15 @@
 # Upstream source provenance
 
-NFIQ1 sources are byte-preserving copies from the official NIST NBIS 5.0.0 archive,
+NFIQ1 sources were imported as byte-preserving copies from the official NIST NBIS 5.0.0 archive,
 SHA-256 `0adf8ab0f6b0e4208de50ca00ba21d3d77112ecd66288757ddfed21f6bee92c3`.
 The complete imported-file hashes are in `nfiq1/upstream-sha256.json`.
 `nfiq1/upstream-origin.json` records the archive prefix and the one unchanged
 header copied from `imgtools/include/swap.h` into the selected include closure.
 The generated `pcasys/include/little.h` is excluded; its original `.src` template
 is retained. `scripts/verify-nfiq1-source.py --archive /path/to/nbis_v5_0_0.zip`
-compares every selected file directly with the pinned official archive. Normal
-builds verify both the file inventory and its hashes offline.
+compares reconstructed originals with the pinned official archive. Normal
+builds verify the inventory, corrected files, and original hashes offline.
+See Reviewed source corrections below for the checked-in 1.0.1 fixes.
 Source: https://www.nist.gov/services-resources/software/nist-biometric-image-software-nbis
 
 NFIQ2 is pinned to official release v2.3.0, commit
@@ -106,3 +107,26 @@ real `std::bad_alloc` as `UnknownError` zero and the binding reports unexpected
 failure rather than a capture-quality outcome. Release builds use the original
 algorithm source and omit the hook exports. Native error minus one means the
 binding has no upstream code; zero remains the original `UnknownError`.
+
+## Reviewed source corrections (1.0.1)
+
+The original `upstream-sha256.json` receipts remain unchanged. CodeQL fixes are
+applied to checked-in NIST sources so scanning and compilation inspect the same
+corrected expressions. `source-corrections.json` records each exact edit and
+the corrected file hash. The build reverses the edits in memory and checks the
+original NIST hash. Unrecorded edits and inventory mismatches fail verification.
+Earlier generated allocation/platform adaptations remain in place.
+
+The CodeQL-reported allocation and byte-count products widen before
+multiplication. This is not a blanket rewrite of all upstream size arithmetic;
+other int products remain, including the byte-image allocations in detect.c
+and morph_TF_map. The wrapper image-dimension limits remain unchanged.
+The retained upstream results.c byte-image allocations also remain unchanged.
+CodeQL-reported floating-point products widen before double-precision
+comparisons/accumulation.
+The diagnostic uses the pointer-difference printf format. The retained eigen.c
+source is not in the NFIQ1 CMake source list and does not ship in the library.
+Its failure-output storage is reused, and its caller/callee now agree on sorted
+zero-based failure indices after reversing the eigenvectors. Dedicated tests
+compile those retained routines with deterministic LAPACK stubs; packaged
+algorithm parity tests do not exercise them.

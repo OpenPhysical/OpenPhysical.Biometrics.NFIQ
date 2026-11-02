@@ -252,8 +252,8 @@ void grphcs_origras(unsigned char *ras, const int w, const int h)
 
   XDestroyWindow(display, small_window);
   big_window = grphcs_startwindow(0, w, h);
-  buf = (unsigned char *)malloc_ch(w * h);
-  memcpy(buf, ras, w * h * sizeof(unsigned char));
+  buf = (unsigned char *)malloc_ch((size_t)w * h);
+  memcpy(buf, ras, (size_t)w * h * sizeof(unsigned char));
   image = xcreateimage(buf, 8, ZPixmap, 0, w, h, 8, w);
   XPutImage(display, big_window, gc, image, 0, 0, 0, 0, w, h);
   XFlush(display);
@@ -294,8 +294,8 @@ void grphcs_enhnc_outsquare(unsigned char outsquare[WS][WS], const int w,
   XImage *image;
   unsigned char *buf;
 
-  buf = (unsigned char *)malloc_ch(w * h);
-  memcpy(buf, outsquare, w * h * sizeof(unsigned char));
+  buf = (unsigned char *)malloc_ch((size_t)w * h);
+  memcpy(buf, outsquare, (size_t)w * h * sizeof(unsigned char));
   image = xcreateimage(buf, 8, ZPixmap, 0, w, h, 8, w);
   XPutImage(display, small_window, gc, image, 0, 0, x, y, w, h);
   XFlush(display);

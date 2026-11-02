@@ -44,6 +44,7 @@ of the software.
  
 #ifndef _LITTLE_H
 #define _LITTLE_H
+#include <stddef.h>
 
 /* Declarations of those functions in src/lib/utils/little.c with
 non-int return values (including, void return value).  Stdio.h is
@@ -65,7 +66,7 @@ extern int isverbose(void);
 extern char *lastcomp(char *);
 extern int linecount(char *);
 extern int linreg(int *, int *, const int, float *, float *);
-extern char *malloc_ch(const int);
+extern char *malloc_ch(const size_t);
 extern int open_read_ch(char *);
 extern void rcfill(unsigned char *, const int, const int);
 extern void rsblobs(unsigned char *, const int, const int);

@@ -4,6 +4,7 @@
 import argparse,hashlib,json,platform,shutil,subprocess,os,sys
 from pathlib import Path
 from runtime_manifest import load_runtimes
+from native_assets import deduplicate_opencv, stage_runtime_licenses
 ROOT=Path(__file__).resolve().parents[1]
 def run(*args):subprocess.run(list(map(str,args)),check=True,cwd=ROOT)
 def main():
@@ -42,6 +43,7 @@ def main():
     for report in diagnostic.glob(a.sanitizer+'.*'):print(report.read_text(errors='replace'),flush=True)
  else:
   stage.mkdir(parents=True,exist_ok=True);run('cmake','--install',build,'--config','Release','--prefix',stage)
+  if system!='win' and a.algorithm=='nfiq2':deduplicate_opencv(stage)
   if system=='win' and a.algorithm=='nfiq2':
    toolchain=Path(shutil.which('g++')).parent
    for name in ['libstdc++-6.dll','libgcc_s_seh-1.dll','libwinpthread-1.dll']:
@@ -50,8 +52,7 @@ def main():
     shutil.copy2(dependency,stage/name)
    licenses=toolchain.parent/'share/licenses'
    if not licenses.is_dir():raise SystemExit('Missing compiler runtime license directory.')
-   for folder in licenses.iterdir():
-    if any(term in folder.name.lower() for term in ['gcc','winpthread','mingw-w64-libraries']):
-     if folder.is_dir():shutil.copytree(folder,stage/'licenses'/folder.name,dirs_exist_ok=True)
+   stage_runtime_licenses(licenses,stage/'licenses')
+
 
 if __name__=='__main__':main()

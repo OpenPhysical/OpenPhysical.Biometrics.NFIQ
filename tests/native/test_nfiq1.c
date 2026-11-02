@@ -103,12 +103,12 @@ static MunitResult reference(const MunitParameter p[], void *d) {
     snprintf(path, sizeof path, "%s/%s", NFIQ_FIXTURES, name);
     FILE *image = fopen(path, "rb");
     munit_assert_not_null(image);
-    munit_assert_size(fread(pixels, 1, width * height, image), ==,
-                      (size_t)(width * height));
+    munit_assert_size(fread(pixels, 1, (size_t)width * height, image), ==,
+                      ((size_t)width * height));
     fclose(image);
     int32_t q, status, error;
     float confidence;
-    munit_assert_int(op_nfiq1_assess(pixels, width * height, width, height, 500,
+    munit_assert_int(op_nfiq1_assess(pixels, (size_t)width * height, width, height, 500,
                                      &q, &confidence, &status, &error),
                      ==, 0);
     munit_assert_int(q, ==, expected_quality);

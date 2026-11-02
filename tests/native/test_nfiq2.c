@@ -63,11 +63,11 @@ static MunitResult reference(const MunitParameter p[], void *d) {
     snprintf(path, sizeof path, "%s/%s", NFIQ_FIXTURES, name);
     FILE *image = fopen(path, "rb");
     munit_assert_not_null(image);
-    munit_assert_size(fread(pixels, 1, width * height, image), ==,
-                      (size_t)(width * height));
+    munit_assert_size(fread(pixels, 1, (size_t)width * height, image), ==,
+                      ((size_t)width * height));
     fclose(image);
     int32_t score;
-    munit_assert_int(op_nfiq2_assess(ctx, pixels, width * height, width, height,
+    munit_assert_int(op_nfiq2_assess(ctx, pixels, (size_t)width * height, width, height,
                                      500, 0, &score, &error),
                      ==, expected_status);
     munit_assert_int(score, ==, expected);
@@ -130,8 +130,8 @@ static MunitResult effective_dimensions(const MunitParameter p[], void *d) {
   const int sizes[][2] = {{800,1000}, {801,1000}, {800,1001}, {900,900}, {1024,600}, {2048,2048}, {64,64}, {100,100}};
   for (size_t i = 0; i < sizeof sizes / sizeof sizes[0]; ++i) {
     int width = sizes[i][0], height = sizes[i][1];
-    for (int j = 0; j < width * height; ++j) pixels[j] = j % 2 ? 64 : 0;
-    int status = op_nfiq2_assess(ctx, pixels, width * height, width, height, 500, 0, &score, &error);
+    for (int j = 0; j < (size_t)width * height; ++j) pixels[j] = j % 2 ? 64 : 0;
+    int status = op_nfiq2_assess(ctx, pixels, (size_t)width * height, width, height, 500, 0, &score, &error);
     if (width > 800 || height > 1000) {
       munit_assert_int(status, ==, 3);
       munit_assert_int(error, ==, 14);

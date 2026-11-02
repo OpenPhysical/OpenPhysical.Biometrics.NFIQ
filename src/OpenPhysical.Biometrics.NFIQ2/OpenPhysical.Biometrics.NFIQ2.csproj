@@ -6,7 +6,9 @@
         <QualityAlgorithm>nfiq2</QualityAlgorithm>
         <PackageId>OpenPhysical.Biometrics.NFIQ2</PackageId>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <Description>In-memory NIST NFIQ 2 fingerprint image quality assessment for .NET.</Description>
+        <PackageLicenseExpression />
+        <PackageLicenseFile>NFIQ2-PACKAGE-LICENSE.md</PackageLicenseFile>
+        <Description>In-memory NIST NFIQ 2 fingerprint image quality assessment for .NET. Includes separately licensed OpenCV, FingerJetFX OSE, and digestpp native components; see the package license and third-party notices.</Description>
     </PropertyGroup>
     <ItemGroup>
         <EmbeddedResource
@@ -20,15 +22,17 @@
             Include="Microsoft.Extensions.DependencyInjection.Abstractions"
             Version="10.0.0"
         />
+        <!-- NuGet appends the glob's relative path to this directory, including extensionless licenses. -->
         <None
             Include="../../artifacts/runtimes/nfiq2/**/*"
             Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
             Pack="true"
-            PackagePath="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
+            PackagePath="runtimes/"
             CopyToOutputDirectory="PreserveNewest"
             CopyToPublishDirectory="PreserveNewest"
         />
         <None Include="../../README.md" Pack="true" PackagePath="/" />
+        <None Include="../../NFIQ2-PACKAGE-LICENSE.md" Pack="true" PackagePath="/" />
         <None Include="../../native/PROVENANCE.md" Pack="true" PackagePath="licenses/" />
     </ItemGroup>
     <ItemGroup>

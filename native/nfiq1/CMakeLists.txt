@@ -41,22 +41,11 @@ set(MINDTCT
  upstream/mindtct/src/lib/mindtct/shape.c
 )
 # Verify provenance even when configuring CMake directly rather than through Python.
-file(READ "${CMAKE_CURRENT_SOURCE_DIR}/upstream-sha256.json" UPSTREAM_HASHES)
-string(JSON UPSTREAM_COUNT LENGTH "${UPSTREAM_HASHES}")
-file(GLOB_RECURSE IMPORTED_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}/upstream" "${CMAKE_CURRENT_SOURCE_DIR}/upstream/*")
-list(LENGTH IMPORTED_FILES IMPORTED_COUNT)
-if(NOT IMPORTED_COUNT EQUAL UPSTREAM_COUNT)
-  message(FATAL_ERROR "The imported NIST source inventory differs from its manifest")
-endif()
-math(EXPR UPSTREAM_LAST "${UPSTREAM_COUNT} - 1")
-foreach(INDEX RANGE ${UPSTREAM_LAST})
-  string(JSON NAME MEMBER "${UPSTREAM_HASHES}" ${INDEX})
-  string(JSON EXPECTED GET "${UPSTREAM_HASHES}" "${NAME}")
-  file(SHA256 "${CMAKE_CURRENT_SOURCE_DIR}/upstream/${NAME}" ACTUAL)
-  if(NOT ACTUAL STREQUAL EXPECTED)
-    message(FATAL_ERROR "Upstream source checksum mismatch: ${NAME}")
-  endif()
-endforeach()
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+execute_process(COMMAND "${Python3_EXECUTABLE}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/source_provenance.py"
+  "${CMAKE_CURRENT_SOURCE_DIR}" COMMAND_ERROR_IS_FATAL ANY)
+
 file(READ "${CMAKE_CURRENT_SOURCE_DIR}/allocator-provenance.json" ALLOCATOR_PROVENANCE)
 foreach(NAME op_alloc.c op_alloc.h)
   string(JSON EXPECTED GET "${ALLOCATOR_PROVENANCE}" files "${NAME}" sha256)

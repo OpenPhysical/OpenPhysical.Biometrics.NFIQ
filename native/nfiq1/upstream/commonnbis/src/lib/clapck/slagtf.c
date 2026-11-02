@@ -250,7 +250,7 @@ of the software.
 	}
 /* L10: */
     }
-    if ((r__1 = A(*n), dabs(r__1)) <= scale1 * tl && IN(*n) == 0) {
+    if ((r__1 = A(*n), dabs(r__1)) <= (double)scale1 * tl && IN(*n) == 0) {
 	IN(*n) = *n;
     }
 
