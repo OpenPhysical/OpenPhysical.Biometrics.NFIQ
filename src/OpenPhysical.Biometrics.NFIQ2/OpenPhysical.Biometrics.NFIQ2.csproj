@@ -22,11 +22,12 @@
             Include="Microsoft.Extensions.DependencyInjection.Abstractions"
             Version="10.0.0"
         />
+        <!-- NuGet appends the glob's relative path to this directory, including extensionless licenses. -->
         <None
             Include="../../artifacts/runtimes/nfiq2/**/*"
             Link="runtimes/%(RecursiveDir)%(Filename)%(Extension)"
             Pack="true"
-            PackagePath="runtimes/%(RecursiveDir)"
+            PackagePath="runtimes/"
             CopyToOutputDirectory="PreserveNewest"
             CopyToPublishDirectory="PreserveNewest"
         />

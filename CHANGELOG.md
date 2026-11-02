@@ -5,6 +5,9 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+- Preserve native-library and Windows-license paths in NFIQ2 packages; verify
+  every staged runtime file against the packed archive before upload (#14).
+
 - Add the OpenPhysical package icon, discovery tags, and absolute package README links (#17).
 
 - Point NFIQ2 package license metadata to its bundled-component license inventory (#16).
