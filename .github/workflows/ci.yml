@@ -10,7 +10,6 @@ concurrency:
   cancel-in-progress: true
 permissions:
   contents: read
-  id-token: write
 jobs:
   runtime-manifest:
     runs-on: ubuntu-22.04
@@ -28,6 +27,9 @@ jobs:
       - id: catalog
         run: echo "matrix=$(python scripts/runtime_manifest.py --matrix)" >> "$GITHUB_OUTPUT"
   runtime:
+    permissions:
+      contents: read
+      id-token: write
     needs: runtime-manifest
     strategy:
       fail-fast: false
