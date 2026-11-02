@@ -7,7 +7,7 @@ library helps an enrollment application assess those captures, choose an image
 to retain, and explain when another impression would help. Each assessment keeps
 the algorithm's original quality scale and outcome.
 
-The shared package version is **1.0.0**, the first stable release. Packages are
+The shared package version is **1.0.1**, a stable maintenance release. Packages are
 published under the **OpenPhysical** NuGet organization. The links below show
 the current publication status; a release becomes installable only after the
 [publishing workflow](https://github.com/OpenPhysical/OpenPhysical.Biometrics.NFIQ/actions/workflows/publish.yml)
@@ -54,11 +54,11 @@ assessment results.
 
 ## Using the libraries
 
-Install either or both packages once version 1.0.0 is available on NuGet:
+Install either or both packages once version 1.0.1 is available on NuGet:
 
 ```sh
-dotnet add package OpenPhysical.Biometrics.NFIQ1 --version 1.0.0
-dotnet add package OpenPhysical.Biometrics.NFIQ2 --version 1.0.0
+dotnet add package OpenPhysical.Biometrics.NFIQ1 --version 1.0.1
+dotnet add package OpenPhysical.Biometrics.NFIQ2 --version 1.0.1
 ```
 
 Both packages accept tightly packed, top-left-origin, 8-bit grayscale pixels.

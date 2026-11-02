@@ -5,6 +5,8 @@ together. Before 1.0, breaking changes increment the minor version.
 
 ## Unreleased
 
+## 1.0.1 - 2026-11-01
+
 - Preserve native-library and Windows-license paths in NFIQ2 packages; verify
   every staged runtime file against the packed archive before upload (#14).
 
