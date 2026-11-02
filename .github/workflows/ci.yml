@@ -10,6 +10,7 @@ concurrency:
   cancel-in-progress: true
 permissions:
   contents: read
+  id-token: write
 jobs:
   runtime-manifest:
     runs-on: ubuntu-22.04
@@ -58,6 +59,11 @@ jobs:
       - run: python scripts/build-native.py --algorithm nfiq1 --tests
       - run: python scripts/build-native.py --algorithm nfiq2 --tests
       - run: dotnet test OpenPhysical.Biometrics.NFIQ.slnx -c Release -m:1 --collect:"XPlat Code Coverage" --results-directory artifacts/coverage/managed
+      - uses: qltysh/qlty-action/coverage@v2
+        if: matrix.rid == 'linux-x64' && github.event.pull_request.head.repo.fork != true
+        with:
+          oidc: true
+          files: artifacts/coverage/managed/**/coverage.cobertura.xml
       - run: dotnet run --project examples/OpenPhysical.Biometrics.NFIQ.Examples -c Release -- --sd04 tests/fixtures
       - name: Native sanitizers
         if: runner.os != 'Windows'
